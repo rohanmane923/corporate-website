@@ -1,0 +1,32 @@
+@import './variables.css';
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body {
+  @apply text-corporate-navy font-sans antialiased;
+  background-color: #fcfcfc;
+}
+
+.company-gradient {
+  background: linear-gradient(135deg, var(--corporate-navy) 0%, #1e293b 100%);
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #f1f1f1;
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--corporate-slate);
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--corporate-blue);
+}
