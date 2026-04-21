@@ -1,7 +1,16 @@
+import React from 'react';
+import { Routes, Route } from 'react-router-dom';
+import AppRoutes from './routes/AppRoutes';
+import AdminRoutes from './routes/AdminRoutes';
+
 export default function App() {
   return (
-    <h1 className="text-3xl font-bold underline">
-      Hello world!
-    </h1>
-  )
-}
+    <Routes>
+      {/* Admin Panel Routes */}
+      <Route path="/admin/*" element={<AdminRoutes />} />
+      
+      {/* Public Frontend Routes */}
+      <Route path="/*" element={<AppRoutes />} />
+    </Routes>
+  );
+}
