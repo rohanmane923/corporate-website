@@ -8,9 +8,15 @@ import Blogs from '../modules/public/pages/news-media/Blogs';
 import BlogDetail from '../modules/public/pages/news-media/BlogDetail';
 import JobListings from '../modules/public/pages/careers/JobListings';
 import JobDetail from '../modules/public/pages/careers/JobDetail';
-import BoardOfDirectors from '../modules/public/pages/governance/BoardOfDirectors';
+
 import ContactInfo from '../modules/public/pages/contact/ContactInfo';
 import PressReleases from '../modules/public/pages/news-media/PressReleases';
+
+import Governance from "../modules/public/pages/governance/pages/Governance";
+import BoardOfDirectors from "../modules/public/pages/governance/pages/BoardOfDirectors";
+import ESGFramework from "../modules/public/pages/governance/pages/ESGFramework";
+import Policies from "../modules/public/pages/governance/pages/Policies";
+import Compliance from "../modules/public/pages/governance/pages/Compliance";
 
 const PublicRoutes = () => {
     return (
@@ -35,9 +41,11 @@ const PublicRoutes = () => {
                 <Route path="sectors/future" element={<div className="pt-24 text-center">Future Sectors</div>} />
 
                 {/* Governance Routes */}
-                <Route path="governance" element={<BoardOfDirectors />} />
-                <Route path="governance/board" element={<BoardOfDirectors />} />
-                <Route path="governance/esg" element={<div className="pt-24 text-center">ESG Framework</div>} />
+               <Route path="/governance" element={<Governance />} />
+               <Route path="/governance/board" element={<BoardOfDirectors />} />
+               <Route path="/governance/esg" element={<ESGFramework />} />
+               <Route path="/governance/policies" element={<Policies />} />
+               <Route path="/governance/compliance" element={<Compliance />} />
 
                 {/* News & Media Routes */}
                 <Route path="news" element={<PressReleases />} />
