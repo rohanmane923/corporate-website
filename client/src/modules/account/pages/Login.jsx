@@ -3,6 +3,7 @@ import { useNavigate } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
 import { loginStart, loginSuccess, loginFailure } from '../../../redux/slices/authSlice';
 import { Eye, EyeOff, Lock, Mail, ArrowRight } from 'lucide-react';
+import authService from '../../../services/authServices';
 
 const Login = () => {
     const [email, setEmail] = useState('admin@gmail.com');
@@ -13,25 +14,26 @@ const Login = () => {
     const dispatch = useDispatch();
     const navigate = useNavigate();
 
-    const handleSubmit = (e) => {
+    const handleSubmit = async (e) => {
         e.preventDefault();
         dispatch(loginStart());
 
-        // Dummy validation
-        setTimeout(() => {
-            if (email === 'admin@gmail.com' && password === 'Admin@123') {
-                const dummyUser = {
-                    id: 1,
-                    email: email,
-                    name: 'Super Admin',
-                    role: 'admin'
-                };
-                dispatch(loginSuccess(dummyUser));
-                navigate('/admin/dashboard');
-            } else {
-                dispatch(loginFailure('Invalid email or password'));
-            }
-        }, 1000);
+        try {
+            // Call auth service login
+            const response = await authService.login(email, password);
+
+            // Dispatch success with user data
+            const userData = response.user || {
+                email: response.email,
+                role: response.role,
+            };
+
+            dispatch(loginSuccess(userData));
+            navigate('/admin/dashboard');
+        } catch (err) {
+            const errorMessage = err.response?.data?.message || 'Invalid email or password';
+            dispatch(loginFailure(errorMessage));
+        }
     };
 
     return (
