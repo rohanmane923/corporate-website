@@ -65,13 +65,7 @@ const ESGCard = ({ title, desc }) => {
         {desc}
       </p>
 
-      {/* ✅ CLICK FIX */}
-      <button
-        onClick={() => navigate("/governance/esg")}
-        className="text-blue-500 text-sm mt-4 inline-block"
-      >
-        Read More →
-      </button>
+     
 
     </div>
   );
