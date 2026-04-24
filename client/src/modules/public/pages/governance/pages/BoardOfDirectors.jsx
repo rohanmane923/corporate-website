@@ -1,6 +1,6 @@
-import { useState } from "react";
 import { useSelector } from "react-redux";
-import BoardCard from "../components/BoardCard";
+import { motion } from "framer-motion";
+import HeroSection from "../components/HeroSection";
 import governanceImg from "../../../../../assets/governance image.png";
 
 const BoardOfDirectors = () => {
@@ -8,94 +8,97 @@ const BoardOfDirectors = () => {
     (state) => state.governance || {}
   );
 
-  const [selectedMember, setSelectedMember] = useState(null);
-
   return (
-    <div>
+    <div className="bg-white">
 
-      {/* 🔷 HERO */}
-      <div className="relative min-h-[50vh] flex items-center mt-[80px]">
-        <div className="absolute inset-0">
-          <img src={governanceImg} className="w-full h-full object-cover" />
-          <div className="absolute inset-0 bg-[#0c2438]/70"></div>
-        </div>
+      {/* 🔷 HERO SECTION */}
+      <HeroSection
+  title="Board of Directors"
+  description="Meet our leadership team guiding the organization with vision and strategic direction."
+  image={governanceImg}
+/>
 
-        <div className="relative z-10 max-w-7xl mx-auto px-8 sm:px-12 lg:px-20 text-white">
-          <h1 className="text-4xl font-bold">Board of Directors</h1>
-          <p className="text-gray-300 mt-2">
-            Meet our leadership team guiding the organization.
-          </p>
-        </div>
-      </div>
+      {/* 🔥 STORYTELLING SECTION */}
+      <section className="max-w-7xl mx-auto px-6 sm:px-10 lg:px-16 py-28 space-y-28">
 
-      {/* 🔷 BOARD */}
-      <div className="bg-[#f5f7fa]">
+        {boardMembers.map((member, index) => {
+          const isEven = index % 2 === 0;
 
-        <section className="max-w-7xl mx-auto px-8 sm:px-12 lg:px-20 py-20">
+          return (
+            <motion.div
+              key={member.id}
+              initial={{ opacity: 0, y: 100 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8 }}
+              viewport={{ once: true }}
+              className="grid md:grid-cols-2 gap-14 items-center"
+            >
 
-          {/* GRID */}
-          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-10">
+              {/* 🟢 IMAGE LEFT */}
+              {isEven && (
+                <motion.div
+                  initial={{ scale: 0.95, opacity: 0 }}
+                  whileInView={{ scale: 1, opacity: 1 }}
+                  transition={{ duration: 0.7 }}
+                  className="overflow-hidden rounded-3xl shadow-2xl"
+                >
+                  <img
+                    src={member.image}
+                    alt={member.name}
+                    className="w-full h-[420px] object-cover transition duration-700 hover:scale-105"
+                  />
+                </motion.div>
+              )}
 
-            {boardMembers.map((member) => (
-              <div key={member.id} onClick={() => setSelectedMember(member)}>
-                <BoardCard {...member} />
-              </div>
-            ))}
-
-          </div>
-
-          {/* 🔥 DETAIL EXPAND */}
-          {selectedMember && (
-            <div className="mt-16 bg-white rounded-xl shadow-lg p-8 grid md:grid-cols-2 gap-10">
-
-              {/* IMAGE */}
-              <div>
-                <img
-                  src={selectedMember.image}
-                  className="rounded-xl w-full max-w-md"
-                />
-              </div>
-
-              {/* CONTENT */}
-              <div>
-
-                <h2 className="text-2xl font-semibold text-orange-500 mb-2">
-                  {selectedMember.name}
+              {/* 🔵 TEXT */}
+              <motion.div
+                initial={{ x: isEven ? 80 : -80, opacity: 0 }}
+                whileInView={{ x: 0, opacity: 1 }}
+                transition={{ duration: 0.7 }}
+                className="space-y-5"
+              >
+                <h2 className="text-3xl font-bold text-gray-900">
+                  {member.name}
                 </h2>
 
-                <p className="text-gray-500 mb-4">
-                  {selectedMember.role}
+                <p className="text-orange-500 font-medium text-lg">
+                  {member.role}
                 </p>
 
-                <p className="text-gray-600 leading-relaxed mb-6">
-                  {selectedMember.name} plays a key role in guiding the
-                  organization with strong leadership, governance, and strategic vision.
+                <p className="text-gray-600 leading-relaxed text-lg">
+                  {member.name} brings strong leadership, strategic thinking,
+                  and governance expertise that helps drive sustainable growth
+                  and long-term success of the organization.
                 </p>
 
-                <h3 className="font-semibold mb-2">Key Responsibilities</h3>
-
-                <ul className="list-disc pl-5 text-gray-600 space-y-2">
-                  <li>Strategic decision-making</li>
-                  <li>Ensuring compliance and governance</li>
-                  <li>Driving business growth</li>
+                <ul className="space-y-2 text-gray-600">
+                  <li>✔ Strategic leadership & decision-making</li>
+                  <li>✔ Governance and compliance</li>
+                  <li>✔ Driving innovation and growth</li>
                 </ul>
+              </motion.div>
 
-                {/* CLOSE BUTTON */}
-                <button
-                  onClick={() => setSelectedMember(null)}
-                  className="mt-6 text-blue-500"
+              {/* 🔴 IMAGE RIGHT */}
+              {!isEven && (
+                <motion.div
+                  initial={{ scale: 0.95, opacity: 0 }}
+                  whileInView={{ scale: 1, opacity: 1 }}
+                  transition={{ duration: 0.7 }}
+                  className="overflow-hidden rounded-3xl shadow-2xl"
                 >
-                  Close ✕
-                </button>
+                  <img
+                    src={member.image}
+                    alt={member.name}
+                    className="w-full h-[420px] object-cover transition duration-700 hover:scale-105"
+                  />
+                </motion.div>
+              )}
 
-              </div>
+            </motion.div>
+          );
+        })}
 
-            </div>
-          )}
-
-        </section>
-
-      </div>
+      </section>
 
     </div>
   );

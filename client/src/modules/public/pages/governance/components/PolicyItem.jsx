@@ -80,13 +80,6 @@ const PolicyItem = ({ name, id, index }) => {
         </div>
       </div>
 
-      {/* RIGHT CLICKABLE ARROW */}
-      <button
-        onClick={() => navigate(`/governance/policies/${id}`)}
-        className="text-gray-400 text-lg hover:text-blue-500"
-      >
-        →
-      </button>
 
     </div>
   );
