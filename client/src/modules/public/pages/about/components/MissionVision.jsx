@@ -1,0 +1,38 @@
+import { motion } from "framer-motion";
+
+const MissionVision = () => {
+  return (
+    <div className="py-20">
+      <div className="max-w-6xl mx-auto px-6 grid md:grid-cols-2 gap-10">
+
+        {[
+          {
+            title: "Our Mission",
+            text: "To enable inclusive infrastructure that supports sustainable development and long-term societal resilience, particularly for underserved communities.",
+          },
+          {
+            title: "Our Vision",
+            text: "To create a future where individuals and businesses can participate in economic systems through fair access, reliable structures, and sustainable opportunities.",
+          },
+        ].map((item, i) => (
+          <motion.div
+            key={i}
+            whileHover={{ scale: 1.03 }}
+            initial={{ opacity: 0, y: 40 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ delay: i * 0.2 }}
+            className="p-8 bg-white rounded-xl shadow-lg border"
+          >
+            <h3 className="text-2xl font-semibold text-orange-500 mb-4">
+              {item.title}
+            </h3>
+            <p className="text-gray-600">{item.text}</p>
+          </motion.div>
+        ))}
+
+      </div>
+    </div>
+  );
+};
+
+export default MissionVision;

@@ -1,17 +1,17 @@
 import apiClient from "./apiClient";
 
-export const getBlogs = async () => {
+export const getAllNews = async () => {
     try {
-        const response = await apiClient.get("/blog");
+        const response = await apiClient.get("/news");
         return response.data;
     } catch (error) {
         throw error;
     }
 };
 
-export const getBlogBySlug = async (slug) => {
+export const getNewsBySlug = async (slug) => {
     try {
-        const response = await apiClient.get(`/blog/${slug}`);
+        const response = await apiClient.get(`/news/${slug}`);
         return response.data;
     } catch (error) {
         throw error;

@@ -1,16 +1,32 @@
-import React from 'react';
+import React, { Suspense, lazy } from 'react';
 import { Routes, Route } from 'react-router-dom';
 import PublicLayout from '../modules/public/layouts/PublicLayout';
 
 // Public Pages
 import Home from '../modules/public/pages/home/pages/Home';
-import Blogs from '../modules/public/pages/news-media/Blogs';
-import BlogDetail from '../modules/public/pages/news-media/BlogDetail';
-import JobListings from '../modules/public/pages/careers/JobListings';
-import JobDetail from '../modules/public/pages/careers/JobDetail';
-import BoardOfDirectors from '../modules/public/pages/governance/BoardOfDirectors';
+const NewsMedia = lazy(() => import('../modules/public/pages/news-media/NewsMedia'));
+const NewsDetail = lazy(() => import('../modules/public/pages/news-media/NewsDetail'));
+const JobListings = lazy(() => import('../modules/public/pages/careers/JobListings'));
+const JobDetail = lazy(() => import('../modules/public/pages/careers/JobDetail'));
+
 import ContactInfo from '../modules/public/pages/contact/ContactInfo';
-import PressReleases from '../modules/public/pages/news-media/PressReleases';
+
+import Governance from "../modules/public/pages/governance/pages/Governance";
+import BoardOfDirectors from "../modules/public/pages/governance/pages/BoardOfDirectors";
+import ESGFramework from "../modules/public/pages/governance/pages/ESGFramework";
+import Policies from "../modules/public/pages/governance/pages/Policies";
+import Compliance from "../modules/public/pages/governance/pages/Compliance";
+
+import About from '../modules/public/pages/about/pages/About';
+
+const SectorsPage = lazy(() => import('../modules/public/pages/sectors/Overview'));
+const LogisticsPage = lazy(() => import('../modules/public/pages/sectors/logistics/Overview'));
+const CaseStudyDetail = lazy(() => import('../modules/public/pages/sectors/logistics/case-studies/CaseStudyDetail'));
+const CaseStudies = lazy(() => import('../modules/public/pages/sectors/logistics/case-studies/CaseStudies'));
+const FinancePage = lazy(() => import('../modules/public/pages/sectors/finance/Overview'));
+const FinanceInsights = lazy(() => import('../modules/public/pages/sectors/finance/insights/Insights'));
+const FinanceInsightDetail = lazy(() => import('../modules/public/pages/sectors/finance/insights/InsightDetail'));
+const routeFallback = <div className="pt-24 text-center text-gray-500">Loading...</div>;
 
 const PublicRoutes = () => {
     return (
@@ -21,29 +37,39 @@ const PublicRoutes = () => {
                 <Route index element={<Home />} />
 
                 {/* About Routes (Placeholder) */}
-                <Route path="about" element={<div className="pt-24 text-center">About Us Overview</div>} />
-                <Route path="about/overview" element={<div className="pt-24 text-center">Company Overview</div>} />
+                <Route path="about" element={<About />} />
+                {/* <Route path="about/overview" element={<div className="pt-24 text-center">Company Overview</div>} />
                 <Route path="about/history" element={<div className="pt-24 text-center">History / Timeline</div>} />
-                <Route path="about/mission-vision" element={<div className="pt-24 text-center">Mission &amp; Vision</div>} />
-                <Route path="about/leadership" element={<div className="pt-24 text-center">Leadership</div>} />
+                <Route path="about/mission-vision" element={<div className="pt-24 text-center">Mission & Vision</div>} />
+                <Route path="about/leadership" element={<div className="pt-24 text-center">Leadership</div>} /> */}
 
                 {/* Sector Routes */}
-                <Route path="sectors" element={<div className="pt-24 text-center">Sectors Overview</div>} />
-                <Route path="sectors/logistics" element={<div className="pt-24 text-center">Logistics Overview</div>} />
+                <Route path="sectors" element={<Suspense fallback={routeFallback}><SectorsPage /></Suspense>} />
+                <Route path="sectors/logistics" element={<Suspense fallback={routeFallback}><LogisticsPage /></Suspense>} />
+                <Route path="sectors/logistics/case-studies" element={<Suspense fallback={routeFallback}><CaseStudies /></Suspense>} />
+                <Route path="sectors/logistics/case-studies/:id" element={<Suspense fallback={routeFallback}><CaseStudyDetail /></Suspense>} />
                 <Route path="sectors/logistics/services" element={<div className="pt-24 text-center">Logistics Services</div>} />
-                <Route path="sectors/finance" element={<div className="pt-24 text-center">Finance Overview</div>} />
+                <Route path="sectors/finance" element={<Suspense fallback={routeFallback}><FinancePage /></Suspense>} />
+                <Route path="sectors/finance/insights" element={<Suspense fallback={routeFallback}><FinanceInsights /></Suspense>} />
+                <Route path="sectors/finance/insights/:id" element={<Suspense fallback={routeFallback}><FinanceInsightDetail /></Suspense>} />
+                <Route path="sectors/finance/services" element={<div className="pt-24 text-center">Finance Services</div>} />
                 <Route path="sectors/future" element={<div className="pt-24 text-center">Future Sectors</div>} />
 
                 {/* Governance Routes */}
-                <Route path="governance" element={<BoardOfDirectors />} />
-                <Route path="governance/board" element={<BoardOfDirectors />} />
-                <Route path="governance/esg" element={<div className="pt-24 text-center">ESG Framework</div>} />
+               <Route path="/governance" element={<Governance />} />
+               <Route path="/governance/board" element={<BoardOfDirectors />} />
+               <Route path="/governance/esg" element={<ESGFramework />} />
+               <Route path="/governance/policies" element={<Policies />} />
+               <Route path="/governance/compliance" element={<Compliance />} />
 
                 {/* News & Media Routes */}
-                <Route path="news" element={<PressReleases />} />
-                <Route path="news/blogs" element={<Blogs />} />
-                <Route path="news/blogs/:id" element={<BlogDetail />} />
-                <Route path="news/press-releases" element={<PressReleases />} />
+                <Route path="news" element={<Suspense fallback={routeFallback}><NewsMedia /></Suspense>} />
+                <Route path="news/blogs" element={<Suspense fallback={routeFallback}><NewsMedia /></Suspense>} />
+                <Route path="news/press-releases" element={<Suspense fallback={routeFallback}><NewsMedia /></Suspense>} />
+                <Route path="news/announcements" element={<Suspense fallback={routeFallback}><NewsMedia /></Suspense>} />
+                <Route path="news/blogs/:id" element={<Suspense fallback={routeFallback}><NewsDetail /></Suspense>} />
+                <Route path="news/press-releases/:id" element={<Suspense fallback={routeFallback}><NewsDetail /></Suspense>} />
+                <Route path="news/announcements/:id" element={<Suspense fallback={routeFallback}><NewsDetail /></Suspense>} />
 
                 {/* Career Routes */}
                 <Route path="careers" element={<JobListings />} />
