@@ -1,11 +1,12 @@
 import { motion } from "framer-motion";
 import { FiArrowRight, FiTarget, FiBarChart2, FiTrendingUp, FiUsers } from "react-icons/fi";
-import { useNavigate } from "react-router-dom";
+import { useNavigate, useLocation } from "react-router-dom";
+import { useEffect } from "react";
 import HeroSection from "../../../components/HeroSection";
 import SectionHeader from "./components/SectionHeader";
 import ServiceCard from "../logistics/components/ServiceCard";
 import CaseStudyCard from "../logistics/components/CaseStudyCard";
-import financeHeroImage from "../../../../../assets/Group_95.png";
+import financeHeroImage from "../../../../../assets/Careers-image.png";
 import financeOverviewImage from "../../../../../assets/Governance image.png";
 import insight1 from "../../../../../assets/blog image.png";
 import insight2 from "../../../../../assets/Press image.png";
@@ -34,25 +35,25 @@ const services = [
     title: "Risk and Compliance",
     description: "Robust frameworks to manage risk, ensure compliance, safeguard your business.",
     icon: FiTarget,
-    to: "/sectors/finance/services",
+    to: "#services",
   },
   {
     title: "Financial Advisory",
     description: "Expert advice for planning mergers, acquisitions, and financial restructuring.",
     icon: FiBarChart2,
-    to: "/sectors/finance/services",
+    to: "#services",
   },
   {
     title: "Investment Solutions",
     description: "Customized investment strategies to help you maximize returns and minimize risk.",
     icon: FiTrendingUp,
-    to: "/sectors/finance/services",
+    to: "#services",
   },
   {
     title: "Performance Optimization",
     description: "Enhance financial performance through process improvement and cost optimization.",
     icon: FiUsers,
-    to: "/sectors/finance/services",
+    to: "#services",
   },
 ];
 
@@ -88,6 +89,18 @@ const insights = [
 
 const FinanceOverview = () => {
   const navigate = useNavigate();
+  const location = useLocation();
+
+  useEffect(() => {
+    if (location.hash) {
+      const el = document.getElementById(location.hash.substring(1));
+      if (el) {
+        setTimeout(() => {
+          el.scrollIntoView({ behavior: "smooth" });
+        }, 100);
+      }
+    }
+  }, [location]);
 
   return (
     <div className="bg-white">
@@ -99,7 +112,7 @@ const FinanceOverview = () => {
       />
 
       {/* Overview Section */}
-      <section className="max-w-7xl mx-auto px-8 sm:px-12 lg:px-20 py-16">
+      <section id="overview" className="max-w-7xl mx-auto px-8 sm:px-12 lg:px-20 py-16">
         <div className="grid gap-10 lg:grid-cols-[0.95fr_1fr] items-center">
           <motion.div
             initial={{ opacity: 0, x: -40 }}
@@ -155,13 +168,13 @@ const FinanceOverview = () => {
       </section>
 
       {/* Services Section */}
-      <section className="bg-[#f7f9fb] py-16">
+      <section id="services" className="bg-[#f7f9fb] py-16">
         <div className="max-w-7xl mx-auto px-8 sm:px-12 lg:px-20">
           <SectionHeader
             title="Services"
             subtitle="Comprehensive solutions to strengthen your financial future."
             actionLabel="Explore All Services"
-            actionTo="/sectors/finance/services"
+            actionTo="#services"
           />
 
           <div className="mt-10 grid gap-6 xl:grid-cols-4 lg:grid-cols-2">
@@ -173,7 +186,7 @@ const FinanceOverview = () => {
       </section>
 
       {/* Insights Section */}
-      <section className="max-w-7xl mx-auto px-8 sm:px-12 lg:px-20 py-16">
+      <section id="insights" className="max-w-7xl mx-auto px-8 sm:px-12 lg:px-20 py-16">
         <div className="flex flex-col gap-4 md:flex-row md:items-end md:justify-between">
           <div>
             <p className="text-orange-500 font-semibold uppercase tracking-[0.35em] mb-2">

@@ -8,8 +8,10 @@ import CompanyOverview from "../../about/components/CompanyOverview";
 import HistoryTimeline from "../../about/components/HistoryTimeLine";
 import MissionVision from "../../about/components/MissionVision";
 import Leadership from "../../about/components/Leadership";
+import HeroSection from "../../../components/HeroSection";
 
 const About = () => {
+  const location = useLocation();
   useEffect(() => {
     if (location.hash) {
       const el = document.getElementById(location.hash.substring(1));
@@ -21,24 +23,12 @@ const About = () => {
     }
   }, [location]);
   return (
-    <div className="bg-gray-100 pt-20 md:pt-20">
-      {/* 🔹 Hero Section */}
-      <div className="relative w-full">
-        <img src={about} alt="about" className="w-full h-auto" />
-
-        {/* Light Gradient Overlay */}
-        <div className="absolute inset-0 bg-gradient-to-r from-black/40 via-black/20 to-transparent"></div>
-
-        <div className="absolute inset-0 flex items-center">
-          <div className="max-w-6xl mx-auto px-6 text-white">
-            <h1 className="text-4xl md:text-5xl font-bold mb-3">About Us</h1>
-            <p className="max-w-lg text-sm md:text-base">
-              Learn more about our mission, values, and commitment to excellence
-              in everything we do.
-            </p>
-          </div>
-        </div>
-      </div>
+    <div className="bg-gray-100">
+      <HeroSection
+        title="About Us"
+        description="Learn more about our mission, values, and commitment to excellence in everything we do."
+        image={about}
+      />
       {/* 🔹 Who We Are */}
       <div className="max-w-6xl mx-auto px-6 py-16 grid md:grid-cols-2 gap-12 items-center">
         {/* Image */}

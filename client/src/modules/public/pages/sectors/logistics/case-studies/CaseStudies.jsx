@@ -5,12 +5,19 @@ import { useState } from "react";
 import HeroSection from "../../../../components/HeroSection";
 import CaseStudyCard from "../components/CaseStudyCard";
 
+import group95 from "../../../../../../assets/Group_95.png";
+import homeAbout from "../../../../../../assets/home about image.png";
+import whyChooseUs from "../../../../../../assets/why choose us.png";
+import corporateLeader from "../../../../../../assets/corporateLeader.png";
+import whoWeAre from "../../../../../../assets/who-we-are.png";
+import journey from "../../../../../../assets/journey.png";
+
 const caseStudies = [
   {
     id: "optimizing-freight-manufacturing-leader",
     title: "Optimizing Freight Manufacturing Leader",
     description: "We streamlined international freight operations, reducing transit time by 25% and costs by 18%.",
-    image: "/assets/Group_95.png",
+    image: group95,
     category: "Freight & Transportation",
     metrics: { time: "25%", cost: "18%", efficiency: "35%" },
     to: "/sectors/logistics/case-studies/optimizing-freight-manufacturing-leader",
@@ -19,7 +26,7 @@ const caseStudies = [
     id: "smart-warehousing-retail-brand",
     title: "Smart Warehousing for Retail Brand",
     description: "Implemented automation and real-time inventory tracking improving order accuracy by 99.5%.",
-    image: "/assets/home about image.png",
+    image: homeAbout,
     category: "Warehousing & Storage",
     metrics: { accuracy: "99.5%", speed: "3x", turnover: "40%" },
     to: "/sectors/logistics/case-studies/smart-warehousing-retail-brand",
@@ -28,7 +35,7 @@ const caseStudies = [
     id: "end-to-end-ecommerce-growth",
     title: "End-to-End for E-commerce Growth",
     description: "Our distribution network helped the client scale deliveries by 40% across multiple regions.",
-    image: "/assets/why choose us.png",
+    image: whyChooseUs,
     category: "Distribution & Delivery",
     metrics: { volume: "40%", time: "50%", satisfaction: "92%" },
     to: "/sectors/logistics/case-studies/end-to-end-ecommerce-growth",
@@ -37,7 +44,7 @@ const caseStudies = [
     id: "supply-chain-optimization-tech",
     title: "Supply Chain Optimization for Tech Giant",
     description: "Revolutionized supply chain visibility and reduced lead times by 45% for a Fortune 500 tech company.",
-    image: "/assets/corporateLeader.png",
+    image: corporateLeader,
     category: "Supply Chain Management",
     metrics: { visibility: "100%", leadTime: "45%", cost: "28%" },
     to: "/sectors/logistics/case-studies/supply-chain-optimization-tech",
@@ -46,7 +53,7 @@ const caseStudies = [
     id: "cold-chain-pharmaceuticals",
     title: "Cold Chain Solutions for Pharmaceuticals",
     description: "Temperature-controlled logistics ensuring 100% product integrity for life-saving medications.",
-    image: "/assets/who-we-are.png",
+    image: whoWeAre,
     category: "Specialized Logistics",
     metrics: { integrity: "100%", compliance: "99.9%", efficiency: "50%" },
     to: "/sectors/logistics/case-studies/cold-chain-pharmaceuticals",
@@ -55,7 +62,7 @@ const caseStudies = [
     id: "last-mile-delivery-retail",
     title: "Last-Mile Delivery Innovation for Retail",
     description: "AI-powered route optimization and same-day delivery network serving 1M+ customers weekly.",
-    image: "/assets/journey.png",
+    image: journey,
     category: "Last-Mile Delivery",
     metrics: { customers: "1M+", speed: "60%", satisfaction: "96%" },
     to: "/sectors/logistics/case-studies/last-mile-delivery-retail",
@@ -118,7 +125,7 @@ const CaseStudies = () => {
       <HeroSection
         title="Case Studies"
         description="Real solutions, real results. Discover how we've helped businesses transform their logistics operations."
-        image="/assets/Group_95.png"
+        image={group95}
       />
 
       {/* Back Navigation */}
@@ -152,11 +159,10 @@ const CaseStudies = () => {
               <motion.button
                 key={category}
                 onClick={() => setSelectedCategory(category)}
-                className={`px-4 py-2 rounded-full text-sm font-medium transition-all duration-200 ${
-                  selectedCategory === category
+                className={`px-4 py-2 rounded-full text-sm font-medium transition-all duration-200 ${selectedCategory === category
                     ? "bg-orange-500 text-white shadow-lg"
                     : "bg-gray-100 text-gray-700 hover:bg-gray-200"
-                }`}
+                  }`}
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
               >

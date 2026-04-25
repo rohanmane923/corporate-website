@@ -1,5 +1,6 @@
 import heroBg from "../../../../../assets/Group_95.png";
 import { motion } from "framer-motion";
+import { Link } from "react-router-dom";
 
 const Hero = () => {
   return (
@@ -7,7 +8,9 @@ const Hero = () => {
 
       <div className="absolute inset-0">
         <img src={heroBg} alt="hero" className="w-full h-full object-cover" />
-        <div className="absolute inset-0 bg-[#0c2438]/75"></div>
+        {/* <div className="absolute inset-0 bg-[#0c2438]/75"></div> */}
+        <div className="absolute inset-0 bg-gradient-to-r from-black/40 via-black/20 to-transparent"></div>
+        {/* <div className="absolute inset-0 bg-gradient-to-r from-[#0c2438]/90 via-[#163b5c]/60 to-transparent"></div> */}
       </div>
 
       <div className="relative z-10 w-full max-w-7xl mx-auto px-8 sm:px-12 lg:px-20 pt-24 pb-16 text-white">
@@ -42,13 +45,17 @@ const Hero = () => {
             transition={{ duration: 1, delay: 0.4 }}
             className="flex flex-wrap gap-4 mb-10"
           >
-            <button className="bg-orange-500 px-6 py-3 rounded-md font-semibold hover:bg-orange-600 hover:scale-105 active:scale-95 transition">
-              Get Started
-            </button>
+            <Link to="/contact">
+              <button className="bg-orange-500 px-6 py-3 rounded-md font-semibold hover:bg-orange-600 hover:scale-105 active:scale-95 transition">
+                Get Started
+              </button>
+            </Link>
 
-            <button className="border border-white/40 px-6 py-3 rounded-md font-semibold hover:bg-orange-500 hover:border-orange-500 hover:scale-105 active:scale-95 transition">
-              Our Services
-            </button>
+            <Link to="/sectors">
+              <button className="border border-white/40 px-6 py-3 rounded-md font-semibold hover:bg-orange-500 hover:border-orange-500 hover:scale-105 active:scale-95 transition">
+                Our Services
+              </button>
+            </Link>
           </motion.div>
 
           {/* 🔥 STATS ANIMATION */}

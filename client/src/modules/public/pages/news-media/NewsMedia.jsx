@@ -61,7 +61,7 @@ const NewsMedia = () => {
   }, [activeTab, searchQuery, newsList]);
 
   return (
-    <div className="min-h-screen bg-slate-50">
+    <div className="min-h-screen bg-slate-50 mt-20">
       {/* Hero Section */}
       <section className="relative h-[400px] flex items-center overflow-hidden">
         {/* Background Image / Overlay */}
@@ -93,7 +93,7 @@ const NewsMedia = () => {
       </section>
 
       {/* Filters & Search */}
-      <section className="py-12 bg-white sticky top-20 z-30 shadow-sm border-b">
+      <section className="py-8 bg-white border-b">
         <div className="w-full max-w-7xl mx-auto px-8 sm:px-12 lg:px-20">
           <div className="flex flex-col lg:flex-row lg:items-center justify-between gap-6">
             {/* Tabs */}

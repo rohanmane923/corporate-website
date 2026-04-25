@@ -3,13 +3,20 @@ import { useParams, useNavigate } from "react-router-dom";
 import { FiArrowLeft, FiTrendingUp, FiClock, FiDollarSign, FiTarget, FiUsers, FiCheckCircle } from "react-icons/fi";
 import HeroSection from "../../../../components/HeroSection";
 
+import blog1 from "../../../../../../assets/blog image.png";
+import press1 from "../../../../../../assets/Press image.png";
+import ann1 from "../../../../../../assets/announcement image.png";
+import blog2 from "../../../../../../assets/blog image (1).png";
+import press2 from "../../../../../../assets/Press image (1).png";
+import ann2 from "../../../../../../assets/announcement image (1).png";
+
 // Insight data with detailed information
 const insightData = {
   "cash-flow-growth": {
     id: "cash-flow-growth",
     title: "5 Ways to Improve Cash Flow for Growth",
     subtitle: "Proven strategies to strengthen cash flow and maintain financial stability",
-    heroImage: "/assets/blog image.png",
+    heroImage: blog1,
     overview: "Strong cash flow is the lifeblood of any business. Many growing companies struggle with cash flow management despite profitability, leading to missed opportunities and operational challenges. Learn how successful businesses optimize their cash flow to fuel growth.",
     challenge: "Many businesses face cash flow challenges even with strong revenue, often due to poor receivables management, excessive inventory, or unpredictable payment cycles. These issues can limit growth opportunities and create financial stress.",
     solution: "We provide comprehensive cash flow optimization strategies including receivables acceleration, inventory management optimization, and working capital financing solutions tailored to your business model.",
@@ -32,16 +39,16 @@ const insightData = {
       position: "CFO, GrowthTech Inc."
     },
     images: [
-      "/assets/blog image.png",
-      "/assets/Press image.png",
-      "/assets/announcement image.png"
+      blog1,
+      press1,
+      ann1
     ]
   },
   "managing-financial-risk": {
     id: "managing-financial-risk",
     title: "Managing Financial Risk in Uncertain Times",
     subtitle: "Identify, assess and manage financial risks effectively",
-    heroImage: "/assets/Press image.png",
+    heroImage: press1,
     overview: "Economic uncertainty creates new financial risks for businesses. Understanding and managing these risks is critical for long-term success. Our comprehensive approach helps organizations identify vulnerabilities and implement protective strategies.",
     challenge: "In volatile markets, businesses face multiple financial risks including market fluctuations, interest rate changes, currency exposure, and credit risk. Without proper risk management frameworks, these challenges can significantly impact financial performance.",
     solution: "We develop comprehensive risk management frameworks including scenario analysis, hedging strategies, and risk monitoring systems to protect your business and ensure resilience.",
@@ -64,16 +71,16 @@ const insightData = {
       position: "Chief Risk Officer, Global Finance Corp"
     },
     images: [
-      "/assets/Press image.png",
-      "/assets/announcement image.png",
-      "/assets/blog image.png"
+      press1,
+      ann1,
+      blog1
     ]
   },
   "investment-trends-2026": {
     id: "investment-trends-2026",
     title: "Investment Trends to Watch in 2026",
     subtitle: "Key opportunities shaping the financial landscape",
-    heroImage: "/assets/announcement image.png",
+    heroImage: ann1,
     overview: "2026 presents unprecedented opportunities for strategic investors. Emerging technologies, market consolidation, and evolving consumer preferences are creating new investment avenues. Understanding these trends is essential for maximizing returns.",
     challenge: "Investors must navigate complex market dynamics while identifying emerging opportunities. Traditional investment strategies may not capture the full spectrum of growth opportunities in today's rapidly evolving landscape.",
     solution: "We provide in-depth market research and investment strategy development to help identify and capitalize on emerging trends and opportunities in key sectors.",
@@ -96,16 +103,16 @@ const insightData = {
       position: "Investment Director, Venture Capital Partners"
     },
     images: [
-      "/assets/announcement image.png",
-      "/assets/blog image.png",
-      "/assets/Press image.png"
+      ann1,
+      blog1,
+      press1
     ]
   },
   "mergers-acquisitions": {
     id: "mergers-acquisitions",
     title: "Mergers & Acquisitions Strategy",
     subtitle: "Navigating complex M&A transactions successfully",
-    heroImage: "/assets/blog image (1).png",
+    heroImage: blog2,
     overview: "Successful M&A transactions require careful planning, due diligence, and strategic execution. We guide organizations through every stage of the M&A process, from target identification to post-merger integration.",
     challenge: "M&A failures often result from inadequate due diligence, cultural misalignment, and poor integration planning. Organizations need expert guidance to identify synergies and realize transaction value.",
     solution: "We provide end-to-end M&A advisory including target identification, due diligence, valuation, deal structuring, and post-merger integration support.",
@@ -128,16 +135,16 @@ const insightData = {
       position: "CEO, Strategic Ventures"
     },
     images: [
-      "/assets/blog image (1).png",
-      "/assets/Press image (1).png",
-      "/assets/announcement image (1).png"
+      blog2,
+      press2,
+      ann2
     ]
   },
   "digital-transformation-finance": {
     id: "digital-transformation-finance",
     title: "Digital Transformation in Finance",
     subtitle: "Automation and AI reshaping financial operations",
-    heroImage: "/assets/Press image (1).png",
+    heroImage: press2,
     overview: "Digital transformation is revolutionizing financial operations. Automation, AI, and advanced analytics are enabling faster, more accurate decision-making while reducing costs. Organizations must adapt to remain competitive.",
     challenge: "Legacy financial systems, change resistance, and technology complexity challenge organizations attempting digital transformation. Many struggle to identify the right technologies and implementation approach.",
     solution: "We design and implement digital transformation roadmaps tailored to your organization, including technology selection, change management, and training.",
@@ -160,16 +167,16 @@ const insightData = {
       position: "Finance Director, Digital-First Corp"
     },
     images: [
-      "/assets/Press image (1).png",
-      "/assets/announcement image (1).png",
-      "/assets/blog image (1).png"
+      press2,
+      ann2,
+      blog2
     ]
   },
   "esg-reporting": {
     id: "esg-reporting",
     title: "ESG Reporting and Compliance",
     subtitle: "Understanding ESG metrics and regulatory requirements",
-    heroImage: "/assets/announcement image (1).png",
+    heroImage: ann2,
     overview: "ESG (Environmental, Social, Governance) reporting is no longer optional. Investors and regulators increasingly require comprehensive ESG disclosure. Understanding requirements and establishing robust reporting frameworks is essential.",
     challenge: "ESG regulations vary by jurisdiction, and reporting standards continue to evolve. Organizations must establish systems to collect, validate, and report ESG data accurately and efficiently.",
     solution: "We help organizations develop ESG strategies, establish reporting frameworks, and ensure compliance with evolving regulations.",
@@ -192,9 +199,9 @@ const insightData = {
       position: "Sustainability Officer, Corporate Leaders Inc."
     },
     images: [
-      "/assets/announcement image (1).png",
-      "/assets/blog image (1).png",
-      "/assets/Press image (1).png"
+      ann2,
+      blog2,
+      press2
     ]
   }
 };

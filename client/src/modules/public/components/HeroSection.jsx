@@ -14,7 +14,9 @@ const HeroSection = ({ title, description, image }) => {
           transition={{ duration: 6, ease: "easeOut" }}
           className="w-full h-full object-cover"
         />
-        <div className="absolute inset-0 bg-[#0c2438]/70"></div>
+        {/* <div className="absolute inset-0 bg-[#0c2438]/70"></div> */}
+        <div className="absolute inset-0 bg-gradient-to-r from-black/40 via-black/20 to-transparent"></div>
+        {/* <div className="absolute inset-0 bg-gradient-to-r from-[#0c2438]/90 via-[#163b5c]/60 to-transparent"></div> */}
       </div>
 
       {/* CONTENT */}

@@ -8,6 +8,7 @@ const Navbar = () => {
     const [scrolled, setScrolled] = useState(false);
     const [activeDropdown, setActiveDropdown] = useState(null);
     const [activeSection, setActiveSection] = useState(null);
+    const [activeMobileDropdown, setActiveMobileDropdown] = useState(null);
     const [open, setOpen] = useState(false); 
     const location = useLocation();
 
@@ -22,6 +23,7 @@ const Navbar = () => {
     useEffect(() => {
         setIsMenuOpen(false);
         setActiveDropdown(null);
+        setActiveMobileDropdown(null);
     }, [location]);
 
     const navLinks = [
@@ -29,12 +31,12 @@ const Navbar = () => {
         {
             name: 'About',
             path: '/about',
-            // dropdown: [
-            //     { name: 'Company Overview', path: '/about/overview' },
-            //     { name: 'History / Timeline', path: '/about/history' },
-            //     { name: 'Mission & Vision', path: '/about/mission-vision' },
-            //     { name: 'Leadership', path: '/about/leadership' },
-            // ]
+            dropdown: [
+                { name: 'Company Overview', path: '/about#overview' },
+                { name: 'History / Timeline', path: '/about#history' },
+                { name: 'Mission & Vision', path: '/about#mission' },
+                { name: 'Leadership', path: '/about#leadership' },
+            ]
         },
         {
            
@@ -79,7 +81,17 @@ const Navbar = () => {
         },
         {
             name: "Future Sectors",
-            path: "/sectors/future"   // future sector page open
+            path: "/sectors/future",   // future sector page open
+            items: [
+                {
+                    name: "Overview",
+                    path: "/sectors/future#overview"
+                },
+                {
+                    name: "Focus Areas",
+                    path: "/sectors/future#focus-areas"
+                }
+            ]
         }
     ]
 },
@@ -107,20 +119,28 @@ const Navbar = () => {
             name: 'Careers',
             path: '/careers',
             dropdown: [
-                { name: 'Job Listings', path: '/careers/listings' },
+                // { name: 'Job Listings', path: '/careers/listings' },
                 { name: 'Life at Company', path: '/careers/life' },
             ]
         },
         { name: 'Contact', path: '/contact' },
     ];
 
+    const toggleMobileDropdown = (name) => {
+        if (activeMobileDropdown === name) {
+            setActiveMobileDropdown(null);
+        } else {
+            setActiveMobileDropdown(name);
+        }
+    };
+
     return (
         <nav className={`fixed w-full z-50 transition-all duration-300 ${scrolled ? 'bg-white shadow-md py-2' : 'bg-white py-4'}`}>
             
-            <div className="w-full max-w-7xl mx-auto px-8 sm:px-12 lg:px-20 flex items-center justify-between">
+            <div className="w-full max-w-7xl mx-auto px-4 sm:px-8 lg:px-12 flex items-center justify-between">
 
                 <Link to="/" className="flex items-center">
-                    <img src={logo} alt="NIF Logo" className="h-10 md:h-12 w-auto object-contain transition-transform duration-300 hover:scale-105" />
+                    <img src={logo} alt="NIF Logo" className="h-8 md:h-12 w-auto object-contain transition-transform duration-300 hover:scale-105" />
                 </Link>
 
                 {/* Desktop Navigation */}
@@ -202,29 +222,74 @@ const Navbar = () => {
 
                 {/* Mobile Toggle */}
                 <button
-                    className="lg:hidden text-corporate-navy"
+                    className="lg:hidden text-corporate-navy p-2"
                     onClick={() => setIsMenuOpen(!isMenuOpen)}
+                    aria-label="Toggle menu"
                 >
-                    ☰
+                    {isMenuOpen ? (
+                        <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
+                        </svg>
+                    ) : (
+                        <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 6h16M4 12h16m-7 6h7" />
+                        </svg>
+                    )}
                 </button>
             </div>
 
-            {/* ✅ MOBILE MENU FIX (ADD BUTTON HERE) */}
-            <div className={`lg:hidden bg-white border-t transition-all ${isMenuOpen ? 'max-h-[80vh]' : 'max-h-0 overflow-hidden'}`}>
-                <div className="px-6 py-4 space-y-4">
+            {/* ✅ MOBILE MENU IMPROVED */}
+            <div className={`lg:hidden bg-white border-t transition-all duration-300 overflow-y-auto ${isMenuOpen ? 'max-h-screen opacity-100' : 'max-h-0 opacity-0'}`}>
+                <div className="px-6 py-6 space-y-2">
                     {navLinks.map((link) => (
-                        <NavLink key={link.name} to={link.path} className="block">
-                            {link.name}
-                        </NavLink>
+                        <div key={link.name} className="border-b border-gray-50 last:border-none pb-2">
+                            <div className="flex items-center justify-between py-2">
+                                <NavLink to={link.path} className={({isActive}) => `text-base font-semibold ${isActive ? 'text-corporate-orange' : 'text-corporate-navy'}`}>
+                                    {link.name}
+                                </NavLink>
+                                {link.dropdown && (
+                                    <button 
+                                        onClick={() => toggleMobileDropdown(link.name)}
+                                        className="p-2 text-corporate-navy"
+                                    >
+                                        <svg className={`w-4 h-4 transition-transform ${activeMobileDropdown === link.name ? 'rotate-180' : ''}`} viewBox="0 0 24 24">
+                                            <path d="M19 9l-7 7-7-7" />
+                                        </svg>
+                                    </button>
+                                )}
+                            </div>
+                            
+                            {link.dropdown && activeMobileDropdown === link.name && (
+                                <div className="pl-4 pb-2 space-y-2 bg-slate-50 rounded-lg mt-1 py-2">
+                                    {link.dropdown.map((item, idx) => (
+                                        <div key={idx}>
+                                            <Link to={item.path} className="block py-2 text-sm font-medium text-gray-700 hover:text-corporate-orange">
+                                                {item.name}
+                                            </Link>
+                                            {item.items && (
+                                                <div className="pl-4 space-y-1 border-l border-gray-200 ml-1">
+                                                    {item.items.map((sub, i) => (
+                                                        <Link key={i} to={sub.path} className="block py-1 text-xs text-gray-500 hover:text-corporate-orange">
+                                                            {sub.name}
+                                                        </Link>
+                                                    ))}
+                                                </div>
+                                            )}
+                                        </div>
+                                    ))}
+                                </div>
+                            )}
+                        </div>
                     ))}
 
-                    {/* ✅ MOBILE BUTTON */}
-                    <button
-                        onClick={() => setOpen(true)}
-                        className="w-full bg-corporate-orange text-white py-3 rounded-lg font-bold"
-                    >
-                        Get in Touch
-                    </button>
+                    <div className="pt-4">
+                        <button
+                            onClick={() => setOpen(true)}
+                            className="w-full bg-corporate-orange text-white py-4 rounded-lg font-bold shadow-lg"
+                        >
+                            Get in Touch
+                        </button>
+                    </div>
                 </div>
             </div>
 

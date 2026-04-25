@@ -1,14 +1,15 @@
 import { motion } from "framer-motion";
 import { FiTruck, FiHome, FiBox, FiMapPin, FiShield, FiArrowRight } from "react-icons/fi";
-import { useNavigate } from "react-router-dom";
+import { useNavigate, useLocation } from "react-router-dom";
+import { useEffect } from "react";
 import HeroSection from "../../../components/HeroSection";
 import SectionHeader from "./components/SectionHeader";
 import ServiceCard from "./components/ServiceCard";
 import CaseStudyCard from "./components/CaseStudyCard";
-import heroImage from "../../../../../assets/Group_95.png";
+import heroImage from "../../../../../assets/About.png";
 import overviewImage from "../../../../../assets/Rectangle256.png";
-import caseStudy1 from "../../../../../assets/Group_95.png";
-import caseStudy2 from "../../../../../assets/home about image.png";
+import caseStudy1 from "../../../../../assets/home about image.png";
+import caseStudy2 from "../../../../../assets/who-we-are.png";
 import caseStudy3 from "../../../../../assets/why choose us.png";
 
 const features = [
@@ -34,25 +35,25 @@ const services = [
     title: "Warehousing & Storage",
     description: "Secure and flexible storage solutions with advanced inventory management.",
     icon: FiHome,
-    to: "/sectors/logistics/services",
+    to: "#services",
   },
   {
     title: "Freight Transportation",
     description: "Reliable road, air, and sea freight solutions tailored to your business needs.",
     icon: FiTruck,
-    to: "/sectors/logistics/services",
+    to: "#services",
   },
   {
     title: "Supply Chain Management",
     description: "End-to-end supply chain management for visibility and efficiency.",
     icon: FiBox,
-    to: "/sectors/logistics/services",
+    to: "#services",
   },
   {
     title: "Distribution & Delivery",
     description: "Timely and efficient distribution with a strong last-mile delivery network.",
     icon: FiMapPin,
-    to: "/sectors/logistics/services",
+    to: "#services",
   },
 ];
 
@@ -82,16 +83,28 @@ const caseStudies = [
 
 const LogisticsOverview = () => {
   const navigate = useNavigate();
+  const location = useLocation();
+
+  useEffect(() => {
+    if (location.hash) {
+      const el = document.getElementById(location.hash.substring(1));
+      if (el) {
+        setTimeout(() => {
+          el.scrollIntoView({ behavior: "smooth" });
+        }, 100);
+      }
+    }
+  }, [location]);
 
   return (
     <div className="bg-white">
       <HeroSection
-        title="Logistica"
+        title="Logistics"
         description="End-to-end logistics solutions that connect businesses, optimize supply chains, and deliver value across the globe."
         image={heroImage}
       />
 
-      <section   id="overview" className="max-w-7xl mx-auto px-8 sm:px-12 lg:px-20 py-16">
+      <section id="overview" className="max-w-7xl mx-auto px-8 sm:px-12 lg:px-20 py-16">
         <div className="grid gap-10 lg:grid-cols-[0.95fr_1fr] items-center">
           {/* <motion.div
             initial={{ opacity: 0, x: -40 }}
@@ -103,27 +116,27 @@ const LogisticsOverview = () => {
           </motion.div> */}
 
           <motion.div
-  initial={{ opacity: 0, x: -40 }}
-  animate={{ opacity: 1, x: 0 }}
-  transition={{ duration: 0.8, ease: "easeOut" }}
-  className="relative h-full min-h-[480px] rounded-[32px] overflow-hidden shadow-[0_24px_80px_rgba(15,23,42,0.08)]"
->
-  <img
-    src={overviewImage}
-    alt="Logistics overview"
-    className="w-full h-full object-cover"
-  />
+            initial={{ opacity: 0, x: -40 }}
+            animate={{ opacity: 1, x: 0 }}
+            transition={{ duration: 0.8, ease: "easeOut" }}
+            className="relative h-full min-h-[480px] rounded-[32px] overflow-hidden shadow-[0_24px_80px_rgba(15,23,42,0.08)]"
+          >
+            <img
+              src={overviewImage}
+              alt="Logistics overview"
+              className="w-full h-full object-cover"
+            />
 
-  {/* gradient overlay */}
-  <div className="absolute inset-0 bg-gradient-to-t from-black/20 via-transparent to-transparent"></div>
-</motion.div>
+            {/* gradient overlay */}
+            <div className="absolute inset-0 bg-gradient-to-t from-black/20 via-transparent to-transparent"></div>
+          </motion.div>
 
           <div className="space-y-8">
             <div>
               <p className="text-orange-500 font-semibold uppercase tracking-[0.35em] mb-3">Overview</p>
               <h1 className="text-4xl font-bold text-corporate-navy mb-4">Moving Business Forward, Together</h1>
               <p className="text-gray-500 leading-relaxed max-w-2xl">
-                At Logistica, we combine global reach with local expertise to provide seamless logistics and supply chain solutions. From transportation and warehousing to distribution and last-mile delivery, we ensure your goods move efficiently, safely, and on time.
+                At Logistics, we combine global reach with local expertise to provide seamless logistics and supply chain solutions. From transportation and warehousing to distribution and last-mile delivery, we ensure your goods move efficiently, safely, and on time.
               </p>
             </div>
 
@@ -155,7 +168,7 @@ const LogisticsOverview = () => {
             title="Services"
             subtitle="Comprehensive solutions designed to streamline your supply chain and drive efficiency."
             actionLabel="Explore All Services"
-            actionTo="/sectors/logistics/services"
+            actionTo="#services"
           />
 
           <div className="mt-10 grid gap-6 xl:grid-cols-4 lg:grid-cols-2">
@@ -166,7 +179,7 @@ const LogisticsOverview = () => {
         </div>
       </section>
 
-      <section    id="case-studies" className="max-w-7xl mx-auto px-8 sm:px-12 lg:px-20 py-16">
+      <section id="case-studies" className="max-w-7xl mx-auto px-8 sm:px-12 lg:px-20 py-16">
         <div className="flex flex-col gap-4 md:flex-row md:items-end md:justify-between">
           <div>
             <p className="text-orange-500 font-semibold uppercase tracking-[0.35em] mb-2">Cash Studies</p>

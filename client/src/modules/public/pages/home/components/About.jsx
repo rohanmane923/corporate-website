@@ -1,6 +1,7 @@
 
 import aboutImg from "../../../../../assets/home about image.png";
 import { motion } from "framer-motion";
+import { Link } from "react-router-dom";
 
 const About = () => {
   return (
@@ -34,9 +35,11 @@ const About = () => {
           </p>
 
           {/* 🔥 BUTTON HOVER ANIMATION */}
-          <button className="bg-orange-500 text-white px-5 py-2 rounded hover:bg-orange-600 hover:scale-105 active:scale-95 transition">
-            Learn More
-          </button>
+          <Link to="/about">
+            <button className="bg-orange-500 text-white px-5 py-2 rounded hover:bg-orange-600 hover:scale-105 active:scale-95 transition">
+              Learn More
+            </button>
+          </Link>
         </motion.div>
 
       </div>

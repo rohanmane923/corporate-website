@@ -31,31 +31,29 @@ const BoardOfDirectors = () => {
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8 }}
               viewport={{ once: true }}
-              className="grid md:grid-cols-2 gap-14 items-center"
+              className="grid md:grid-cols-2 gap-10 md:gap-14 items-center"
             >
 
-              {/* 🟢 IMAGE LEFT */}
-              {isEven && (
-                <motion.div
-                  initial={{ scale: 0.95, opacity: 0 }}
-                  whileInView={{ scale: 1, opacity: 1 }}
-                  transition={{ duration: 0.7 }}
-                  className="overflow-hidden rounded-3xl shadow-2xl"
-                >
-                  <img
-                    src={member.image}
-                    alt={member.name}
-                    className="w-full h-[420px] object-cover transition duration-700 hover:scale-105"
-                  />
-                </motion.div>
-              )}
+              {/* IMAGE CONTAINER */}
+              <motion.div
+                initial={{ scale: 0.95, opacity: 0 }}
+                whileInView={{ scale: 1, opacity: 1 }}
+                transition={{ duration: 0.7 }}
+                className={`overflow-hidden rounded-3xl shadow-2xl ${isEven ? 'md:order-1' : 'md:order-2'}`}
+              >
+                <img
+                  src={member.image}
+                  alt={member.name}
+                  className="w-full h-[320px] sm:h-[420px] object-cover transition duration-700 hover:scale-105"
+                />
+              </motion.div>
 
-              {/* 🔵 TEXT */}
+              {/* TEXT CONTAINER */}
               <motion.div
                 initial={{ x: isEven ? 80 : -80, opacity: 0 }}
                 whileInView={{ x: 0, opacity: 1 }}
                 transition={{ duration: 0.7 }}
-                className="space-y-5"
+                className={`space-y-5 ${isEven ? 'md:order-2' : 'md:order-1'}`}
               >
                 <h2 className="text-3xl font-bold text-gray-900">
                   {member.name}
@@ -72,27 +70,17 @@ const BoardOfDirectors = () => {
                 </p>
 
                 <ul className="space-y-2 text-gray-600">
-                  <li>✔ Strategic leadership & decision-making</li>
-                  <li>✔ Governance and compliance</li>
-                  <li>✔ Driving innovation and growth</li>
+                  <li className="flex items-center gap-2">
+                    <span className="text-orange-500">✔</span> Strategic leadership & decision-making
+                  </li>
+                  <li className="flex items-center gap-2">
+                    <span className="text-orange-500">✔</span> Governance and compliance
+                  </li>
+                  <li className="flex items-center gap-2">
+                    <span className="text-orange-500">✔</span> Driving innovation and growth
+                  </li>
                 </ul>
               </motion.div>
-
-              {/* 🔴 IMAGE RIGHT */}
-              {!isEven && (
-                <motion.div
-                  initial={{ scale: 0.95, opacity: 0 }}
-                  whileInView={{ scale: 1, opacity: 1 }}
-                  transition={{ duration: 0.7 }}
-                  className="overflow-hidden rounded-3xl shadow-2xl"
-                >
-                  <img
-                    src={member.image}
-                    alt={member.name}
-                    className="w-full h-[420px] object-cover transition duration-700 hover:scale-105"
-                  />
-                </motion.div>
-              )}
 
             </motion.div>
           );

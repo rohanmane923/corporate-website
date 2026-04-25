@@ -4,10 +4,16 @@ import PublicLayout from '../modules/public/layouts/PublicLayout';
 
 // Public Pages
 import Home from '../modules/public/pages/home/pages/Home';
+
 const NewsMedia = lazy(() => import('../modules/public/pages/news-media/NewsMedia'));
-const NewsDetail = lazy(() => import('../modules/public/pages/news-media/NewsDetail'));
-const JobListings = lazy(() => import('../modules/public/pages/careers/JobListings'));
-const JobDetail = lazy(() => import('../modules/public/pages/careers/JobDetail'));
+const NewsDetail = lazy(() => import('../modules/public/pages/news-media/NewsDetail'));//
+
+// import Blogs from '../modules/public/pages/news-media/Blogs';
+// import BlogDetail from '../modules/public/pages/news-media/BlogDetail';
+
+import CareersHome from '../modules/public/pages/careers/pages/CareersHome';
+import JobDetail from '../modules/public/pages/careers/pages/JobDetail';
+import LifeAtCompany from '../modules/public/pages/careers/pages/LifeAtCompany';
 
 import ContactInfo from '../modules/public/pages/contact/ContactInfo';
 
@@ -26,6 +32,7 @@ const CaseStudies = lazy(() => import('../modules/public/pages/sectors/logistics
 const FinancePage = lazy(() => import('../modules/public/pages/sectors/finance/Overview'));
 const FinanceInsights = lazy(() => import('../modules/public/pages/sectors/finance/insights/Insights'));
 const FinanceInsightDetail = lazy(() => import('../modules/public/pages/sectors/finance/insights/InsightDetail'));
+const FuturePage = lazy(() => import('../modules/public/pages/sectors/future/Overview'));
 const routeFallback = <div className="pt-24 text-center text-gray-500">Loading...</div>;
 
 const PublicRoutes = () => {
@@ -53,7 +60,7 @@ const PublicRoutes = () => {
                 <Route path="sectors/finance/insights" element={<Suspense fallback={routeFallback}><FinanceInsights /></Suspense>} />
                 <Route path="sectors/finance/insights/:id" element={<Suspense fallback={routeFallback}><FinanceInsightDetail /></Suspense>} />
                 <Route path="sectors/finance/services" element={<div className="pt-24 text-center">Finance Services</div>} />
-                <Route path="sectors/future" element={<div className="pt-24 text-center">Future Sectors</div>} />
+                <Route path="sectors/future" element={<Suspense fallback={routeFallback}><FuturePage /></Suspense>} />
 
                 {/* Governance Routes */}
                <Route path="/governance" element={<Governance />} />
@@ -72,10 +79,9 @@ const PublicRoutes = () => {
                 <Route path="news/announcements/:id" element={<Suspense fallback={routeFallback}><NewsDetail /></Suspense>} />
 
                 {/* Career Routes */}
-                <Route path="careers" element={<JobListings />} />
-                <Route path="careers/listings" element={<JobListings />} />
-                <Route path="careers/life" element={<div className="pt-24 text-center">Life at Company</div>} />
-                <Route path="careers/:id" element={<JobDetail />} />
+                <Route path="careers" element={<CareersHome />} />
+                <Route path="careers/life" element={<LifeAtCompany />} />
+                <Route path="careers/:slug" element={<JobDetail />} />
 
                 {/* Contact Route */}
                 <Route path="contact" element={<ContactInfo />} />

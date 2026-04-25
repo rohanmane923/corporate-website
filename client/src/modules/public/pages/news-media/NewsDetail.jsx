@@ -75,7 +75,7 @@ const NewsDetail = () => {
   const readTime = item.readTime || '5 min read';
 
   return (
-    <div className="min-h-screen bg-white">
+    <div className="min-h-screen bg-white mt-20">
       {/* Hero Banner */}
       <section className="relative h-[500px] md:h-[600px] overflow-hidden">
         <motion.img

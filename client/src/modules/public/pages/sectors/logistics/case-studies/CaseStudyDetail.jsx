@@ -3,13 +3,22 @@ import { useParams, useNavigate } from "react-router-dom";
 import { FiArrowLeft, FiTrendingUp, FiClock, FiDollarSign, FiTarget, FiUsers, FiCheckCircle } from "react-icons/fi";
 import HeroSection from "../../../../components/HeroSection";
 
+import group95 from "../../../../../../assets/Group_95.png";
+import homeAbout from "../../../../../../assets/About.png";
+import whyChooseUs from "../../../../../../assets/why choose us.png";
+import corporateLeader from "../../../../../../assets/corporateLeader.png";
+import whoWeAre from "../../../../../../assets/who-we-are.png";
+import journey from "../../../../../../assets/journey.png";
+import rectangle256 from "../../../../../../assets/Rectangle256.png";
+import governance from "../../../../../../assets/Governance image.png";
+
 // Case study data with detailed information
 const caseStudyData = {
   "optimizing-freight-manufacturing-leader": {
     id: "optimizing-freight-manufacturing-leader",
     title: "Optimizing Freight Operations for Manufacturing Leader",
     subtitle: "Streamlining international logistics to reduce costs and improve delivery times",
-    heroImage: "/assets/Group_95.png",
+    heroImage: group95,
     overview: "A leading manufacturing company faced challenges with their international freight operations, resulting in delayed deliveries and increased costs. Our comprehensive logistics optimization strategy transformed their supply chain efficiency.",
     challenge: "The client was experiencing significant delays in international shipments, with transit times averaging 45 days and costs representing 15% of their total operational expenses. Manual tracking systems led to poor visibility and frequent miscommunications.",
     solution: "We implemented an integrated logistics platform combining real-time tracking, automated documentation processing, and optimized routing algorithms. Our team also established dedicated freight forwarding partnerships and introduced predictive analytics for demand forecasting.",
@@ -32,16 +41,16 @@ const caseStudyData = {
       position: "VP of Operations, TechManufacturing Inc."
     },
     images: [
-      "/assets/Group_95.png",
-      "/assets/home about image.png",
-      "/assets/why choose us.png"
+      group95,
+      homeAbout,
+      whyChooseUs
     ]
   },
   "smart-warehousing-retail-brand": {
     id: "smart-warehousing-retail-brand",
     title: "Smart Warehousing Solution for Retail Brand",
     subtitle: "Implementing automation and real-time inventory tracking for e-commerce excellence",
-    heroImage: "/assets/home about image.png",
+    heroImage: homeAbout,
     overview: "A fast-growing retail brand needed to scale their warehousing operations to handle increasing order volumes while maintaining exceptional accuracy and speed.",
     challenge: "The retailer's manual inventory management system couldn't keep up with their rapid growth, leading to stock discrepancies, delayed shipments, and customer dissatisfaction. They needed a solution that could handle 10x order volume growth.",
     solution: "We designed and implemented a fully automated warehousing system featuring robotic picking, AI-powered inventory optimization, and real-time tracking. The solution included warehouse management software integration and staff training programs.",
@@ -64,16 +73,16 @@ const caseStudyData = {
       position: "CEO, RetailPlus"
     },
     images: [
-      "/assets/home about image.png",
-      "/assets/Group_95.png",
-      "/assets/why choose us.png"
+      homeAbout,
+      group95,
+      whyChooseUs
     ]
   },
   "end-to-end-ecommerce-growth": {
     id: "end-to-end-ecommerce-growth",
     title: "End-to-End Distribution Network for E-commerce Growth",
     subtitle: "Scaling delivery operations across multiple regions for rapid business expansion",
-    heroImage: "/assets/why choose us.png",
+    heroImage: whyChooseUs,
     overview: "An e-commerce platform experienced explosive growth but struggled with last-mile delivery challenges across multiple geographic regions. We built a comprehensive distribution network to support their expansion.",
     challenge: "The client's existing logistics partners couldn't scale with their growth, resulting in delivery delays, high costs, and poor customer experience. They needed a reliable partner for nationwide and international expansion.",
     solution: "We developed a multi-regional distribution network with strategic warehouse locations, partnered with local delivery providers, and implemented advanced route optimization technology. The solution included real-time tracking and customer communication systems.",
@@ -96,16 +105,16 @@ const caseStudyData = {
       position: "Head of Operations, ShopFast"
     },
     images: [
-      "/assets/why choose us.png",
-      "/assets/Group_95.png",
-      "/assets/home about image.png"
+      whyChooseUs,
+      group95,
+      homeAbout
     ]
   },
   "supply-chain-optimization-tech": {
     id: "supply-chain-optimization-tech",
     title: "Supply Chain Optimization for Tech Giant",
     subtitle: "Revolutionizing supply chain visibility and reducing lead times for a Fortune 500 technology company",
-    heroImage: "/assets/corporateLeader.png",
+    heroImage: corporateLeader,
     overview: "A leading technology company faced significant challenges with their global supply chain, experiencing poor visibility, long lead times, and inefficient inventory management. Our comprehensive supply chain optimization solution transformed their operations and improved overall business performance.",
     challenge: "The client struggled with fragmented supply chain systems across multiple global locations, resulting in 45-day average lead times, 30% excess inventory, and poor demand forecasting accuracy. Manual processes and lack of real-time visibility led to frequent stockouts and delayed product launches.",
     solution: "We implemented an integrated supply chain management platform combining advanced analytics, AI-powered forecasting, and real-time tracking across all facilities. The solution included automated inventory optimization, predictive analytics for demand planning, and seamless integration with existing ERP systems.",
@@ -128,16 +137,16 @@ const caseStudyData = {
       position: "VP of Global Operations, TechCorp"
     },
     images: [
-      "/assets/corporateLeader.png",
-      "/assets/Group_95.png",
-      "/assets/who-we-are.png"
+      corporateLeader,
+      group95,
+      whoWeAre
     ]
   },
   "cold-chain-pharmaceuticals": {
     id: "cold-chain-pharmaceuticals",
     title: "Cold Chain Solutions for Pharmaceuticals",
     subtitle: "Temperature-controlled logistics ensuring product integrity for life-saving medications",
-    heroImage: "/assets/who-we-are.png",
+    heroImage: whoWeAre,
     overview: "A pharmaceutical company required specialized cold chain logistics to maintain the efficacy of temperature-sensitive medications during global distribution. Our comprehensive cold chain solution ensured 100% product integrity while optimizing costs and delivery times.",
     challenge: "The client needed to maintain strict temperature controls (2-8°C) for vaccines and biologics across complex global supply chains. Previous solutions resulted in 5% product loss due to temperature excursions and inconsistent monitoring.",
     solution: "We developed a comprehensive cold chain logistics network featuring GPS-enabled temperature monitoring, automated climate-controlled vehicles, and AI-powered route optimization. The solution included real-time alerts, backup systems, and comprehensive documentation for regulatory compliance.",
@@ -160,16 +169,16 @@ const caseStudyData = {
       position: "Chief Logistics Officer, PharmaLife"
     },
     images: [
-      "/assets/who-we-are.png",
-      "/assets/corporateLeader.png",
-      "/assets/journey.png"
+      whoWeAre,
+      corporateLeader,
+      journey
     ]
   },
   "last-mile-delivery-retail": {
     id: "last-mile-delivery-retail",
     title: "Last-Mile Delivery Innovation for Retail",
     subtitle: "AI-powered route optimization and same-day delivery network serving millions of customers",
-    heroImage: "/assets/journey.png",
+    heroImage: journey,
     overview: "A major retail chain needed to revolutionize their last-mile delivery operations to compete in the e-commerce space. Our AI-powered solution transformed their delivery network, achieving same-day delivery capabilities and exceptional customer satisfaction.",
     challenge: "The retailer faced increasing customer expectations for fast, reliable delivery while managing rising operational costs. Their existing delivery network struggled with route inefficiencies, resulting in 48-hour delivery times and high customer service costs.",
     solution: "We implemented an AI-powered delivery optimization platform featuring dynamic routing, predictive delivery windows, and automated fleet management. The solution included customer communication systems, real-time tracking, and performance analytics.",
@@ -192,9 +201,9 @@ const caseStudyData = {
       position: "Director of E-commerce, RetailMax"
     },
     images: [
-      "/assets/journey.png",
-      "/assets/who-we-are.png",
-      "/assets/corporateLeader.png"
+      journey,
+      whoWeAre,
+      corporateLeader
     ]
   }
 };

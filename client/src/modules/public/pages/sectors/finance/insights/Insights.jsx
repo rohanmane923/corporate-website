@@ -5,12 +5,20 @@ import { useState } from "react";
 import HeroSection from "../../../../components/HeroSection";
 import CaseStudyCard from "../../logistics/components/CaseStudyCard";
 
+import blog1 from "../../../../../../assets/blog image.png";
+import press1 from "../../../../../../assets/Press image.png";
+import ann1 from "../../../../../../assets/announcement image.png";
+import blog2 from "../../../../../../assets/blog image (1).png";
+import press2 from "../../../../../../assets/Press image (1).png";
+import ann2 from "../../../../../../assets/announcement image (1).png";
+import gov from "../../../../../../assets/Governance image.png";
+
 const insights = [
   {
     id: "cash-flow-growth",
     title: "5 Ways to Improve Cash Flow for Growth",
     description: "Proven strategies to strengthen your cash flow and maintain financial stability.",
-    image: "/assets/blog image.png",
+    image: blog1,
     category: "Financial Strategy",
     metrics: { roi: "25%", timeframe: "6 months", success: "92%" },
     to: "/sectors/finance/insights/cash-flow-growth",
@@ -19,7 +27,7 @@ const insights = [
     id: "managing-financial-risk",
     title: "Managing Financial Risk in Uncertain Times",
     description: "Learn how businesses can identify, assess and manage financial risks effectively.",
-    image: "/assets/Press image.png",
+    image: press1,
     category: "Risk Management",
     metrics: { savings: "35%", protection: "100%", efficiency: "48%" },
     to: "/sectors/finance/insights/managing-financial-risk",
@@ -28,7 +36,7 @@ const insights = [
     id: "investment-trends-2026",
     title: "Investment Trends to Watch in 2026",
     description: "Explore key investment trends and opportunities shaping the financial landscape.",
-    image: "/assets/announcement image.png",
+    image: ann1,
     category: "Market Insights",
     metrics: { growth: "18%", opportunities: "50+", adoption: "85%" },
     to: "/sectors/finance/insights/investment-trends-2026",
@@ -37,7 +45,7 @@ const insights = [
     id: "mergers-acquisitions",
     title: "Mergers & Acquisitions Strategy",
     description: "A comprehensive guide to navigating complex M&A transactions successfully.",
-    image: "/assets/blog image (1).png",
+    image: blog2,
     category: "Corporate Strategy",
     metrics: { deals: "200+", success: "94%", value: "$10B+" },
     to: "/sectors/finance/insights/mergers-acquisitions",
@@ -46,7 +54,7 @@ const insights = [
     id: "digital-transformation-finance",
     title: "Digital Transformation in Finance",
     description: "How automation and AI are reshaping financial operations and decision-making.",
-    image: "/assets/Press image (1).png",
+    image: press2,
     category: "Technology & Innovation",
     metrics: { efficiency: "60%", cost: "45%", adoption: "78%" },
     to: "/sectors/finance/insights/digital-transformation-finance",
@@ -55,7 +63,7 @@ const insights = [
     id: "esg-reporting",
     title: "ESG Reporting and Compliance",
     description: "Understanding the importance of ESG metrics and regulatory requirements.",
-    image: "/assets/announcement image (1).png",
+    image: ann2,
     category: "Compliance & ESG",
     metrics: { companies: "85%", reporting: "100%", impact: "90%" },
     to: "/sectors/finance/insights/esg-reporting",
@@ -118,7 +126,7 @@ const Insights = () => {
       <HeroSection
         title="Financial Insights"
         description="Expert perspectives and market trends to inform your financial decisions."
-        image="/assets/Governance image.png"
+        image={gov}
       />
 
       {/* Back Navigation */}
@@ -152,11 +160,10 @@ const Insights = () => {
               <motion.button
                 key={category}
                 onClick={() => setSelectedCategory(category)}
-                className={`px-4 py-2 rounded-full text-sm font-medium transition-all duration-200 ${
-                  selectedCategory === category
+                className={`px-4 py-2 rounded-full text-sm font-medium transition-all duration-200 ${selectedCategory === category
                     ? "bg-orange-500 text-white shadow-lg"
                     : "bg-gray-100 text-gray-700 hover:bg-gray-200"
-                }`}
+                  }`}
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
               >
