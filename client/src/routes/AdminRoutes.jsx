@@ -11,7 +11,7 @@ import Dashboard from '../modules/admin/pages/Dashboard';
 import ManageBlogs from '../modules/admin/pages/ManageBlogs';
 import ManageCareers from '../modules/admin/pages/ManageCareers';
 import ManageEnquiries from '../modules/admin/pages/ManageEnquiries';
-import ManageSectors from '../modules/admin/pages/ManageSectors';
+import ManageNews from '../modules/admin/pages/ManageNews';
 
 // Protected Route Component
 const ProtectedAdminRoute = ({ children }) => {
@@ -44,13 +44,14 @@ const AdminRoutes = () => {
 
                 <Route path="dashboard" element={<Dashboard />} />
                 <Route path="blogs" element={<ManageBlogs />} />
-                <Route path="sectors" element={<ManageSectors />} />
+
                 <Route path="jobs" element={<ManageCareers />} />
                 <Route path="enquiries" element={<ManageEnquiries />} />
+                <Route path="news" element={<ManageNews />} />
             </Route>
 
             {/* Fallback to login for any unknown admin sub-routes */}
-            <Route path="*" element={<Navigate to="/admin/login" replace />} />
+            {/* <Route path="*" element={<Navigate to="/admin/login" replace />} /> */}
         </Routes>
     );
 };
