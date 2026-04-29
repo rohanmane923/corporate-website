@@ -1,7 +1,7 @@
 import { useState } from "react";
-import { Pencil, Trash2 } from "lucide-react";
+import { Pencil, Trash2, Eye } from "lucide-react";
 
-const JobTable = ({ jobs = [], onEdit, onDelete }) => {
+const JobTable = ({ jobs = [], onEdit, onDelete, onViewApplications, getApplicationsCount }) => {
   const [currentPage, setCurrentPage] = useState(1);
   const itemsPerPage = 5;
 
@@ -16,9 +16,10 @@ const JobTable = ({ jobs = [], onEdit, onDelete }) => {
   };
 
   return (
-    <div className="bg-white rounded-2xl shadow-md border overflow-x-auto">
+  <div className="bg-white rounded-3xl border border-gray-100 shadow-sm overflow-hidden">
 
-      {/* TABLE */}
+    {/* TABLE */}
+    <div className="overflow-x-auto">
       <table className="w-full text-sm">
 
         <thead className="bg-gray-100 text-xs uppercase text-gray-600">
@@ -27,6 +28,7 @@ const JobTable = ({ jobs = [], onEdit, onDelete }) => {
             <th className="p-4">Location</th>
             <th className="p-4">Type</th>
             <th className="p-4">Status</th>
+            <th className="p-4 text-center">Applications</th>
             <th className="p-4 text-center">Actions</th>
           </tr>
         </thead>
@@ -54,9 +56,18 @@ const JobTable = ({ jobs = [], onEdit, onDelete }) => {
                   </span>
                 </td>
 
+                <td className="p-4 text-center">
+                  <button
+                    onClick={() => onViewApplications(job)}
+                    className="inline-flex items-center gap-2 px-3 py-1 bg-blue-50 text-blue-600 rounded-lg hover:bg-blue-100 transition-colors text-sm font-medium"
+                  >
+                    <Eye size={14} />
+                    {getApplicationsCount(job._id)}
+                  </button>
+                </td>
+
                 <td className="p-4">
                   <div className="flex justify-center gap-3">
-
                     <button
                       onClick={() => onEdit(job)}
                       className="p-2 rounded-md hover:bg-blue-50 transition"
@@ -70,7 +81,6 @@ const JobTable = ({ jobs = [], onEdit, onDelete }) => {
                     >
                       <Trash2 size={16} className="text-red-500" />
                     </button>
-
                   </div>
                 </td>
               </tr>
@@ -78,7 +88,7 @@ const JobTable = ({ jobs = [], onEdit, onDelete }) => {
           ) : (
             <tr>
               <td
-                colSpan="5"
+                colSpan="6"
                 className="text-center p-6 text-gray-500"
               >
                 No jobs found
@@ -87,46 +97,49 @@ const JobTable = ({ jobs = [], onEdit, onDelete }) => {
           )}
         </tbody>
       </table>
+    </div> 
 
-      {/* PAGINATION */}
-      {jobs.length > itemsPerPage && (
-        <div className="flex justify-center items-center gap-2 p-4 border-t">
+    {/* PAGINATION */}
+    {jobs.length > itemsPerPage && (
+      <div className="flex justify-center items-center gap-2 p-4 border-t">
 
+        <button
+          disabled={currentPage === 1}
+          onClick={() => goToPage(currentPage - 1)}
+          className="px-3 py-1 border rounded disabled:opacity-50"
+        >
+          Prev
+        </button>
+
+        {Array.from({ length: totalPages }, (_, i) => (
           <button
-            disabled={currentPage === 1}
-            onClick={() => goToPage(currentPage - 1)}
-            className="px-3 py-1 border rounded disabled:opacity-50"
+            key={i}
+            onClick={() => goToPage(i + 1)}
+            className={`px-3 py-1 rounded border ${
+              currentPage === i + 1
+                ? "bg-orange-500 text-white"
+                : "hover:bg-gray-100"
+            }`}
           >
-            Prev
+            {i + 1}
           </button>
+        ))}
 
-          {Array.from({ length: totalPages }, (_, i) => (
-            <button
-              key={i}
-              onClick={() => goToPage(i + 1)}
-              className={`px-3 py-1 rounded border ${
-                currentPage === i + 1
-                  ? "bg-orange-500 text-white"
-                  : "hover:bg-gray-100"
-              }`}
-            >
-              {i + 1}
-            </button>
-          ))}
+        <button
+          disabled={currentPage === totalPages}
+          onClick={() => goToPage(currentPage + 1)}
+          className="px-3 py-1 border rounded disabled:opacity-50"
+        >
+          Next
+        </button>
 
-          <button
-            disabled={currentPage === totalPages}
-            onClick={() => goToPage(currentPage + 1)}
-            className="px-3 py-1 border rounded disabled:opacity-50"
-          >
-            Next
-          </button>
+      </div>
+    )}
 
-        </div>
-      )}
 
-    </div>
-  );
+  </div>
+);
 };
+
 
 export default JobTable;

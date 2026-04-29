@@ -6,7 +6,7 @@ import {
   removeEnquiry
 } from "../../../redux/slices/enquiryAdminSlice";
 
-import { Eye, Trash2, CheckCheck } from "lucide-react";
+import { Eye, Trash2, CheckCheck, MessageSquare, CheckCircle2 } from "lucide-react";
 import EnquiryDrawer from "../../admin/components/EnquiryDrawer";
 
 const ITEMS_PER_PAGE = 5;
@@ -53,35 +53,47 @@ const AdminEnquiryPage = () => {
   if (loading) return <p className="p-6">Loading...</p>;
 
   return (
-    <div className="p-6 bg-gray-50 min-h-screen">
+    <div className="max-w-7xl mx-auto py-6 space-y-8 bg-gray-50 min-h-screen">
 
       {/* HEADER */}
       <div className="mb-6">
-        <h1 className="text-3xl font-bold text-gray-800">Enquiries</h1>
-        <p className="text-gray-500 text-sm">
-          Manage all customer enquiries
+        <h1 className="text-3xl font-extrabold text-corporate-navy">Enquiries</h1>
+        <p className="text-gray-500 text-sm mt-2 max-w-2xl">
+          Manage all customer enquiries with a polished admin experience matching the blog and news pages.
         </p>
       </div>
 
       {/* ✅ STATS CARDS */}
       <div className="grid grid-cols-1 md:grid-cols-3 gap-4 mb-6">
+        <div className="bg-white p-6 rounded-3xl border border-gray-100 shadow-sm">
+          <div className="flex items-center justify-between gap-3">
+            <div className="bg-blue-50 p-3 rounded-2xl">
+              <MessageSquare size={18} className="text-blue-600" />
+            </div>
+            <p className="text-xs uppercase tracking-wider text-gray-400 font-semibold">Total Enquiries</p>
+          </div>
+          <h2 className="text-3xl font-bold text-corporate-navy mt-5">{total}</h2>
+        </div>
 
-        <StatCard title="Total Enquiries" value={total} />
+        <div className="bg-white p-6 rounded-3xl border border-gray-100 shadow-sm">
+          <div className="flex items-center justify-between gap-3">
+            <div className="bg-red-50 p-3 rounded-2xl">
+              <CheckCircle2 size={18} className="text-red-600" />
+            </div>
+            <p className="text-xs uppercase tracking-wider text-gray-400 font-semibold">Unread</p>
+          </div>
+          <h2 className="text-3xl font-bold text-corporate-navy mt-5">{unread}</h2>
+        </div>
 
-        <StatCard
-          title="Unread"
-          value={unread}
-          color="text-red-500"
-          bg="bg-red-50"
-        />
-
-        <StatCard
-          title="Read"
-          value={read}
-          color="text-green-500"
-          bg="bg-green-50"
-        />
-
+        <div className="bg-white p-6 rounded-3xl border border-gray-100 shadow-sm">
+          <div className="flex items-center justify-between gap-3">
+            <div className="bg-green-50 p-3 rounded-2xl">
+              <CheckCircle2 size={18} className="text-green-600" />
+            </div>
+            <p className="text-xs uppercase tracking-wider text-gray-400 font-semibold">Read</p>
+          </div>
+          <h2 className="text-3xl font-bold text-corporate-navy mt-5">{read}</h2>
+        </div>
       </div>
 
       {/* ✅ FILTER TABS */}
@@ -105,7 +117,7 @@ const AdminEnquiryPage = () => {
       </div>
 
       {/* TABLE */}
-      <div className="bg-white rounded-xl shadow-sm border overflow-hidden">
+      <div className="bg-white rounded-3xl border border-gray-100 shadow-sm overflow-hidden">
 
         <table className="w-full text-sm">
 

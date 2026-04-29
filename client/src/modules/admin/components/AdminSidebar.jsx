@@ -1,11 +1,12 @@
 import React from 'react';
 import { NavLink } from 'react-router-dom';
-import { 
-    LayoutDashboard, 
-    FileText, 
-    Layers, 
-    Briefcase, 
+import {
+    LayoutDashboard,
+    FileText,
+    Layers,
+    Briefcase,
     MessageSquare,
+    Users,
     ChevronLeft,
     ChevronRight
 } from 'lucide-react';
@@ -14,16 +15,17 @@ const AdminSidebar = ({ isCollapsed, setIsCollapsed }) => {
     const menuItems = [
         { name: 'Dashboard', path: '/admin/dashboard', icon: <LayoutDashboard size={20} /> },
         { name: 'Blogs', path: '/admin/blogs', icon: <FileText size={20} /> },
-        { name: 'Sectors', path: '/admin/sectors', icon: <Layers size={20} /> },
+        { name: 'News', path: '/admin/news', icon: <Layers size={20} /> },
+
         { name: 'Jobs', path: '/admin/jobs', icon: <Briefcase size={20} /> },
+        { name: 'Job Applications', path: '/admin/applications', icon: <Users size={20} /> },
         { name: 'Enquiries', path: '/admin/enquiries', icon: <MessageSquare size={20} /> },
     ];
 
     return (
-        <aside 
-            className={`bg-white border-r border-gray-200 transition-all duration-300 ease-in-out ${
-                isCollapsed ? 'w-20' : 'w-64'
-            } flex flex-col h-screen fixed left-0 top-0 z-50`}
+        <aside
+            className={`bg-white border-r border-gray-200 transition-all duration-300 ease-in-out ${isCollapsed ? 'w-20' : 'w-64'
+                } flex flex-col h-screen fixed left-0 top-0 z-50`}
         >
             {/* Logo Section */}
             <div className="h-16 flex items-center justify-between px-6 border-b border-gray-100">
@@ -32,7 +34,7 @@ const AdminSidebar = ({ isCollapsed, setIsCollapsed }) => {
                         Noisto <span className="text-corporate-orange">Admin</span>
                     </span>
                 )}
-                <button 
+                <button
                     onClick={() => setIsCollapsed(!isCollapsed)}
                     className="p-1.5 rounded-lg bg-gray-50 hover:bg-gray-100 text-gray-500 transition-colors"
                 >
@@ -48,8 +50,8 @@ const AdminSidebar = ({ isCollapsed, setIsCollapsed }) => {
                         to={item.path}
                         className={({ isActive }) => `
                             flex items-center gap-3 px-3 py-2.5 rounded-lg transition-all duration-200
-                            ${isActive 
-                                ? 'bg-corporate-orange text-white shadow-md shadow-corporate-orange/20' 
+                            ${isActive
+                                ? 'bg-corporate-orange text-white shadow-md shadow-corporate-orange/20'
                                 : 'text-gray-600 hover:bg-gray-50 hover:text-corporate-navy'}
                         `}
                     >

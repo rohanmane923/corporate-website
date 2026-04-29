@@ -1,29 +1,47 @@
 import { useEffect, useState } from "react";
+import { Briefcase, CheckCircle2, Clock, Search } from "lucide-react";
+import { useNavigate } from "react-router-dom";
 import JobForm from "../../admin/components/JobForm";
 import JobTable from "../../admin/components/JobTable";
 
 import {
-  getJobsAdmin,
+  getAdminJobs,
   createJob,
   updateJob,
   deleteJob,
-} from "../../../services/jobService";
+  getApplicationsCountByJob,
+} from "../../../services/careerService";
+
 
 const AdminJobsPage = () => {
   const [jobs, setJobs] = useState([]);
+  const [applicationsCount, setApplicationsCount] = useState([]);
   const [selectedJob, setSelectedJob] = useState(null);
   const [showForm, setShowForm] = useState(false);
   const [search, setSearch] = useState("");
   const [debouncedSearch, setDebouncedSearch] = useState("");
 
+ const navigate = useNavigate();
+
   // fetch jobs
   const fetchJobs = async () => {
-    const res = await getJobsAdmin();
+    const res = await getAdminJobs();
     setJobs(res.data);
+  };
+
+  // fetch applications count
+  const fetchApplicationsCount = async () => {
+    try {
+      const res = await getApplicationsCountByJob();
+      setApplicationsCount(res.data);
+    } catch (error) {
+      console.error('Error fetching applications count:', error);
+    }
   };
 
   useEffect(() => {
     fetchJobs();
+    fetchApplicationsCount();
   }, []);
 
   // debounce search
@@ -45,6 +63,12 @@ const AdminJobsPage = () => {
   const openJobs = jobs.filter((j) => j.status === "open").length;
   const closedJobs = jobs.filter((j) => j.status === "closed").length;
 
+  const statsData = [
+    { label: "Total Jobs", value: totalJobs, icon: Briefcase, color: "bg-blue-600", bg: "bg-blue-50" },
+    { label: "Open Jobs", value: openJobs, icon: CheckCircle2, color: "bg-green-600", bg: "bg-green-50" },
+    { label: "Closed Jobs", value: closedJobs, icon: Clock, color: "bg-red-600", bg: "bg-red-50" },
+  ];
+
   // create / update
   const handleSubmit = async (data) => {
     if (selectedJob) {
@@ -58,6 +82,8 @@ const AdminJobsPage = () => {
     fetchJobs();
   };
 
+
+
   // delete
   const handleDelete = async (id) => {
     if (!window.confirm("Delete this job?")) return;
@@ -65,19 +91,36 @@ const AdminJobsPage = () => {
     fetchJobs();
   };
 
-  // edit
-  const handleEdit = (job) => {
+  // get applications count for a job
+  const getApplicationsCountForJob = (jobId) => {
+    const countData = applicationsCount.find(count => count.jobId === jobId);
+    return countData ? countData.count : 0;
+  };
+
+  // handle view applications
+  // const handleViewApplications = (job) => {
+  //   // Navigate to applications page with job filter
+  //   window.location.href = `/admin/applications?job=${job._id}`;
+  // };
+
+  const handleViewApplications = (job) => {
+  navigate(`/admin/applications?job=${job._id}`);
+};
+
+   const handleEdit = (job) => {
     setSelectedJob(job);
     setShowForm(true);
   };
 
   return (
-    <div className="p-6 bg-gray-50 min-h-screen">
+    <div className="max-w-7xl mx-auto py-6 space-y-8 bg-gray-50 min-h-screen">
 
       {/* HEADER */}
-      <div className="flex flex-col md:flex-row justify-between md:items-center gap-4 mb-6">
-
-        <h1 className="text-2xl font-bold">Jobs Dashboard</h1>
+      <div className="flex flex-col md:flex-row md:items-center justify-between gap-4">
+        <div>
+          <h1 className="text-3xl font-extrabold text-corporate-navy tracking-tight">Manage Careers</h1>
+          <p className="text-gray-500 mt-2 max-w-2xl">Create, update and monitor job positions using a clean admin layout consistent with blogs and news.</p>
+        </div>
 
         <button
           onClick={() => {
@@ -91,33 +134,32 @@ const AdminJobsPage = () => {
 
       </div>
 
-      {/* SEARCH */}
-      <input
-        type="text"
-        placeholder="Search jobs..."
-        value={search}
-        onChange={(e) => setSearch(e.target.value)}
-        className="w-full md:w-1/3 p-3 border rounded-lg mb-6 focus:ring-2 focus:ring-orange-400 outline-none"
-      />
+      <div className="grid grid-cols-1 lg:grid-cols-3 gap-4">
+        <div className="relative w-full lg:w-1/2">
+          <Search className="absolute left-4 top-1/2 -translate-y-1/2 text-gray-400" size={18} />
+          <input
+            type="text"
+            placeholder="Search jobs..."
+            value={search}
+            onChange={(e) => setSearch(e.target.value)}
+            className="w-full pl-11 pr-4 py-3 bg-gray-50 border border-gray-200 rounded-2xl focus:ring-2 focus:ring-corporate-orange/20 focus:border-corporate-orange outline-none transition-all text-sm"
+          />
+        </div>
+      </div>
 
       {/* STATS CARDS */}
-      <div className="grid grid-cols-1 md:grid-cols-3 gap-4 mb-6">
-
-        <div className="bg-white p-5 rounded-xl shadow border">
-          <p className="text-gray-500">Total Jobs</p>
-          <h2 className="text-2xl font-bold">{totalJobs}</h2>
-        </div>
-
-        <div className="bg-green-50 p-5 rounded-xl shadow border border-green-200">
-          <p className="text-green-600">Open Jobs</p>
-          <h2 className="text-2xl font-bold text-green-700">{openJobs}</h2>
-        </div>
-
-        <div className="bg-red-50 p-5 rounded-xl shadow border border-red-200">
-          <p className="text-red-600">Closed Jobs</p>
-          <h2 className="text-2xl font-bold text-red-700">{closedJobs}</h2>
-        </div>
-
+      <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
+        {statsData.map((card) => (
+          <div key={card.label} className="bg-white p-6 rounded-3xl border border-gray-100 shadow-sm">
+            <div className="flex items-center justify-between gap-3">
+              <div className={`${card.bg} p-3 rounded-2xl`}>
+                <card.icon size={20} className={card.color.replace('bg-', 'text-')} />
+              </div>
+              <p className="text-xs uppercase tracking-wider text-gray-400 font-semibold">{card.label}</p>
+            </div>
+            <h2 className="text-3xl font-bold text-corporate-navy mt-5">{card.value}</h2>
+          </div>
+        ))}
       </div>
 
       {/* MODAL */}
@@ -158,6 +200,8 @@ const AdminJobsPage = () => {
         jobs={filteredJobs}
         onEdit={handleEdit}
         onDelete={handleDelete}
+        onViewApplications={handleViewApplications}
+        getApplicationsCount={getApplicationsCountForJob}
       />
 
     </div>
