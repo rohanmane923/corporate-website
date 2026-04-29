@@ -17,7 +17,7 @@ import {
 // Services
 import { getAdminBlogs } from '../../../services/blogService';
 import { getAdminNews } from '../../../services/newsService';
-import { getEnquiries } from '../../../services/enquiryService';
+import { getAllEnquiries } from '../../../services/enquiryService';
 import { getApplications, getAdminJobs } from '../../../services/careerService';
 
 const Dashboard = () => {
@@ -39,7 +39,7 @@ const Dashboard = () => {
                 const [blogs, news, enquiries, applications, jobs] = await Promise.all([
                     getAdminBlogs(),
                     getAdminNews(),
-                    getEnquiries(),
+                    getAllEnquiries(),
                     getApplications(),
                     getAdminJobs()
                 ]);
@@ -110,7 +110,7 @@ const Dashboard = () => {
     }
 
     return (
-        <div className="max-w-7xl mx-auto space-y-8 animate-in fade-in duration-500">
+        <div className="max-w-7xl mx-auto px-6 py-6 space-y-8 animate-in fade-in duration-500">
             {/* Header Section */}
             <div className="flex flex-col md:flex-row md:items-center justify-between gap-4">
                 <div>

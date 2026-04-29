@@ -10,6 +10,7 @@ import Login from '../modules/account/pages/Login';
 import Dashboard from '../modules/admin/pages/Dashboard';
 import ManageBlogs from '../modules/admin/pages/ManageBlogs';
 import ManageCareers from '../modules/admin/pages/ManageCareers';
+import JobApplications from '../modules/admin/pages/JobApplications';
 import ManageEnquiries from '../modules/admin/pages/ManageEnquiries';
 import ManageNews from '../modules/admin/pages/ManageNews';
 
@@ -46,6 +47,7 @@ const AdminRoutes = () => {
                 <Route path="blogs" element={<ManageBlogs />} />
 
                 <Route path="jobs" element={<ManageCareers />} />
+                <Route path="applications" element={<JobApplications />} />
                 <Route path="enquiries" element={<ManageEnquiries />} />
                 <Route path="news" element={<ManageNews />} />
             </Route>
@@ -57,3 +59,5 @@ const AdminRoutes = () => {
 };
 
 export default AdminRoutes;
+
+

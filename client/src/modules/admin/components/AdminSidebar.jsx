@@ -6,6 +6,7 @@ import {
     Layers,
     Briefcase,
     MessageSquare,
+    Users,
     ChevronLeft,
     ChevronRight
 } from 'lucide-react';
@@ -17,6 +18,7 @@ const AdminSidebar = ({ isCollapsed, setIsCollapsed }) => {
         { name: 'News', path: '/admin/news', icon: <Layers size={20} /> },
 
         { name: 'Jobs', path: '/admin/jobs', icon: <Briefcase size={20} /> },
+        { name: 'Job Applications', path: '/admin/applications', icon: <Users size={20} /> },
         { name: 'Enquiries', path: '/admin/enquiries', icon: <MessageSquare size={20} /> },
     ];
 
@@ -79,3 +81,5 @@ const AdminSidebar = ({ isCollapsed, setIsCollapsed }) => {
 };
 
 export default AdminSidebar;
+
+
