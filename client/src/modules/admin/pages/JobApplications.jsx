@@ -258,7 +258,7 @@ const JobApplications = () => {
             {/* HEADER */}
             <div className="flex flex-col gap-2">
                 <div>
-                    <h1 className="text-3xl font-extrabold text-corporate-navy">Job Applications</h1>
+                    <h1 className="text-2xl font-bold text-corporate-navy tracking-tight">Job Applications</h1>
                     <p className="text-gray-500 text-sm mt-2">Review and manage all job applications submitted by candidates in a consistent admin layout.</p>
                 </div>
             </div>
@@ -523,3 +523,4 @@ const JobApplications = () => {
 };
 
 export default JobApplications;
+

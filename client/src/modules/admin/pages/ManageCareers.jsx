@@ -118,7 +118,7 @@ const AdminJobsPage = () => {
       {/* HEADER */}
       <div className="flex flex-col md:flex-row md:items-center justify-between gap-4">
         <div>
-          <h1 className="text-3xl font-extrabold text-corporate-navy tracking-tight">Manage Careers</h1>
+          <h1 className="text-2xl font-bold text-corporate-navy tracking-tight">Manage Careers</h1>
           <p className="text-gray-500 mt-2 max-w-2xl">Create, update and monitor job positions using a clean admin layout consistent with blogs and news.</p>
         </div>
 

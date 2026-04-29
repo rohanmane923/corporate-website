@@ -13,7 +13,8 @@ import ManageCareers from '../modules/admin/pages/ManageCareers';
 import JobApplications from '../modules/admin/pages/JobApplications';
 import ManageEnquiries from '../modules/admin/pages/ManageEnquiries';
 import ManageNews from '../modules/admin/pages/ManageNews';
-
+import AdminProfile from '../modules/admin/pages/AdminProfile';
+    
 // Protected Route Component
 const ProtectedAdminRoute = ({ children }) => {
     const { isAuthenticated } = useSelector((state) => state.auth);
@@ -50,6 +51,7 @@ const AdminRoutes = () => {
                 <Route path="applications" element={<JobApplications />} />
                 <Route path="enquiries" element={<ManageEnquiries />} />
                 <Route path="news" element={<ManageNews />} />
+                <Route path="profile" element={<AdminProfile />} />
             </Route>
 
             {/* Fallback to login for any unknown admin sub-routes */}

@@ -57,7 +57,7 @@ const AdminEnquiryPage = () => {
 
       {/* HEADER */}
       <div className="mb-6">
-        <h1 className="text-3xl font-extrabold text-corporate-navy">Enquiries</h1>
+        <h1 className="text-2xl font-bold text-corporate-navy tracking-tight">Enquiries</h1>
         <p className="text-gray-500 text-sm mt-2 max-w-2xl">
           Manage all customer enquiries with a polished admin experience matching the blog and news pages.
         </p>
