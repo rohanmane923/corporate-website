@@ -3,7 +3,7 @@ import { useNavigate } from "react-router-dom";
 const Sectors = () => {
   const navigate = useNavigate();
 
-  const sectors = ["Corporate", "Logistics", "Foundation", "Institute"];
+  const sectors = ["Corporate","Finance","Logistics", "Foundation", "Institute"];
 
   return (
     <section className="py-16 bg-white overflow-hidden">
