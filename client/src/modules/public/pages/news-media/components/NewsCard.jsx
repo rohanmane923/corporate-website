@@ -36,7 +36,7 @@ const NewsCard = ({ item }) => {
       transition={{ duration: 0.3 }}
       className="bg-white rounded-lg overflow-hidden shadow-sm hover:shadow-xl transition-shadow duration-300 border border-transparent hover:border-corporate-orange/20 group"
     >
-      <Link to={`/news/${displayType}s/${slug}`} className="block relative aspect-video overflow-hidden">
+      <Link to={`/announcements/${displayType}s/${slug}`} className="block relative aspect-video overflow-hidden">
         <img
           src={displayImage}
           alt={title}
@@ -56,7 +56,7 @@ const NewsCard = ({ item }) => {
         </div>
 
         <h3 className="text-xl font-bold text-corporate-navy mb-3 line-clamp-2 hover:text-corporate-orange transition-colors">
-          <Link to={`/news/${displayType}s/${slug}`}>{title}</Link>
+          <Link to={`/announcements/${displayType}s/${slug}`}>{title}</Link>
         </h3>
 
         <p className="text-gray-600 text-sm mb-6 line-clamp-3">
@@ -64,7 +64,7 @@ const NewsCard = ({ item }) => {
         </p>
 
         <Link
-          to={`/news/${displayType}s/${slug}`}
+          to={`/announcements/${displayType}s/${slug}`}
           className="inline-flex items-center text-corporate-navy font-bold text-sm hover:text-corporate-orange transition-colors group"
         >
           Read More
