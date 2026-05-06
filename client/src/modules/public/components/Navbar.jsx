@@ -108,11 +108,11 @@ const Navbar = () => {
         },
         {
             name: 'News & Media',
-            path: '/news',
+            path: '/announcements',
             dropdown: [
-                { name: 'Blogs / Articles', path: '/news/blogs' },
-                { name: 'Press Releases', path: '/news/press-releases' },
-                { name: 'Announcements', path: '/news/announcements' },
+                { name: 'Blogs / Articles', path: '/announcements/blogs' },
+                { name: 'Press Releases', path: '/announcements/press-releases' },
+                // { name: 'Announcements', path: '/news/announcements' },
             ]
         },
         {

@@ -70,13 +70,13 @@ const PublicRoutes = () => {
                <Route path="/governance/compliance" element={<Compliance />} />
 
                 {/* News & Media Routes */}
-                <Route path="news" element={<Suspense fallback={routeFallback}><NewsMedia /></Suspense>} />
-                <Route path="news/blogs" element={<Suspense fallback={routeFallback}><NewsMedia /></Suspense>} />
-                <Route path="news/press-releases" element={<Suspense fallback={routeFallback}><NewsMedia /></Suspense>} />
-                <Route path="news/announcements" element={<Suspense fallback={routeFallback}><NewsMedia /></Suspense>} />
-                <Route path="news/blogs/:id" element={<Suspense fallback={routeFallback}><NewsDetail /></Suspense>} />
-                <Route path="news/press-releases/:id" element={<Suspense fallback={routeFallback}><NewsDetail /></Suspense>} />
-                <Route path="news/announcements/:id" element={<Suspense fallback={routeFallback}><NewsDetail /></Suspense>} />
+                <Route path="announcements" element={<Suspense fallback={routeFallback}><NewsMedia /></Suspense>} />
+                <Route path="announcements/blogs" element={<Suspense fallback={routeFallback}><NewsMedia /></Suspense>} />
+                <Route path="announcements/press-releases" element={<Suspense fallback={routeFallback}><NewsMedia /></Suspense>} />
+                <Route path="announcements/announcements" element={<Suspense fallback={routeFallback}><NewsMedia /></Suspense>} />
+                <Route path="announcements/blogs/:id" element={<Suspense fallback={routeFallback}><NewsDetail /></Suspense>} />
+                <Route path="announcements/press-releases/:id" element={<Suspense fallback={routeFallback}><NewsDetail /></Suspense>} />
+                <Route path="announcements/announcements/:id" element={<Suspense fallback={routeFallback}><NewsDetail /></Suspense>} />
 
                 {/* Career Routes */}
                 <Route path="careers" element={<CareersHome />} />

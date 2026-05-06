@@ -76,7 +76,6 @@ const NewsMedia = () => {
     const path = location.pathname;
     if (path.includes('blogs')) setActiveTab('blog');
     else if (path.includes('press-releases')) setActiveTab('press-release');
-    else if (path.includes('announcements')) setActiveTab('announcement');
     else setActiveTab('all');
   }, [location.pathname]);
 
@@ -84,7 +83,7 @@ const NewsMedia = () => {
     { id: 'all', label: 'All' },
     { id: 'blog', label: 'Blogs / Articles' },
     { id: 'press-release', label: 'Press Releases' },
-    { id: 'announcement', label: 'Announcements' },
+
   ];
 
   const filteredNews = useMemo(() => {
