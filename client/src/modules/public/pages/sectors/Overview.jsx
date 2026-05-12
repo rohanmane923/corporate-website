@@ -14,7 +14,7 @@ import HeroSection from "../../../public/components/HeroSection";
 import heroImage from "../../../../assets/governance image.png";
 import futureImg from "../../../../assets/Future Scalable Sectors 258 (1).png";
 import logisticsImg from "../../../../assets/Rectangle256.png";
-import financeImg from "../../../../assets/governance image.png";
+import financeImg from "../../../../assets/Governance image.png";
 
 const sectorCards = [
   {
