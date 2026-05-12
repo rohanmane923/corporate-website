@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { motion } from "framer-motion";
 import HeroSection from "../../../components/HeroSection";
-import governanceImg from "../../../../../assets/governance image.png";
+import governanceImg from "../../../../../assets/Governance image.png";
 import {
   ShieldCheck,
   Lock,
