@@ -10,7 +10,7 @@ import corporateLeader from "../../../../../../assets/corporateLeader.png";
 import whoWeAre from "../../../../../../assets/who-we-are.png";
 import journey from "../../../../../../assets/journey.png";
 import rectangle256 from "../../../../../../assets/Rectangle256.png";
-import governance from "../../../../../../assets/governance image.png";
+import governance from "../../../../../../assets/Governance image.png";
 
 // Case study data with detailed information
 const caseStudyData = {
