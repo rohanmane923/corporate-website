@@ -11,7 +11,7 @@ import {
 } from "react-icons/fi";
 
 import HeroSection from "../../../public/components/HeroSection";
-import heroImage from "../../../../assets/governance image.png";
+import heroImage from "../../../../assets/Governance image.png";
 import futureImg from "../../../../assets/Future Scalable Sectors 258 (1).png";
 import logisticsImg from "../../../../assets/Rectangle256.png";
 import financeImg from "../../../../assets/Governance image.png";
