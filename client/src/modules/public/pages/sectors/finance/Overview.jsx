@@ -7,7 +7,7 @@ import SectionHeader from "./components/SectionHeader";
 import ServiceCard from "../logistics/components/ServiceCard";
 import CaseStudyCard from "../logistics/components/CaseStudyCard";
 import financeHeroImage from "../../../../../assets/Careers-image.png";
-import financeOverviewImage from "../../../../../assets/Governance image.png";
+import financeOverviewImage from "../../../../../assets/governance image.png";
 import insight1 from "../../../../../assets/blog image.png";
 import insight2 from "../../../../../assets/Press image.png";
 import insight3 from "../../../../../assets/announcement image.png";
