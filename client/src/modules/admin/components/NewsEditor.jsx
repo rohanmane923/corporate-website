@@ -53,7 +53,7 @@ const NewsEditor = ({ value, onChange, placeholder = 'Write your news content...
                     <Redo size={16} />
                 </MenuButton>
             </div>
-            <EditorContent editor={editor} className="prose prose-sm  p-4 min-h-64" />
+            <EditorContent editor={editor} className="prose prose-sm max-w-none p-4 min-h-64" />
         </div>
     );
 };

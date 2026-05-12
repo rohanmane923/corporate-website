@@ -377,7 +377,7 @@ const ManageBlogs = () => {
                             initial={{ scale: 0.95, opacity: 0, y: 20 }}
                             animate={{ scale: 1, opacity: 1, y: 0 }}
                             exit={{ scale: 0.95, opacity: 0, y: 20 }}
-                            className="bg-white w-full  rounded-3xl shadow-2xl overflow-hidden flex flex-col ]"
+                            className="bg-white w-full max-w-6xl rounded-3xl shadow-2xl overflow-hidden flex flex-col max-h-[90vh]"
                         >
                             {/* Modal Header */}
                             <div className="px-8 py-6 border-b border-gray-100 flex items-center justify-between bg-gray-50/50">
@@ -607,7 +607,7 @@ const ManageBlogs = () => {
                             initial={{ scale: 0.95, opacity: 0 }}
                             animate={{ scale: 1, opacity: 1 }}
                             exit={{ scale: 0.95, opacity: 0 }}
-                            className="bg-white w-full  rounded-2xl shadow-2xl p-8 text-center"
+                            className="bg-white w-full max-w-md rounded-2xl shadow-2xl p-8 text-center"
                         >
                             <div className="w-16 h-16 bg-red-50 rounded-full flex items-center justify-center mx-auto mb-6">
                                 <Trash2 className="text-red-600" size={30} />

@@ -218,7 +218,7 @@ const AdminManagement = ({
             {/* Add/Edit Modal */}
             {isModalOpen && (
                 <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-corporate-navy/40 backdrop-blur-sm animate-in fade-in duration-300">
-                    <div className="bg-white w-full  rounded-2xl shadow-2xl overflow-hidden animate-in zoom-in-95 duration-300 (100vh-4rem)]">
+                    <div className="bg-white w-full max-w-3xl rounded-2xl shadow-2xl overflow-hidden animate-in zoom-in-95 duration-300 max-h-[calc(100vh-4rem)]">
                         <div className="flex items-center justify-between px-6 py-4 border-b border-gray-100 bg-gray-50/50">
                             <h3 className="text-xl font-bold text-corporate-navy">
                                 {currentItem ? `Edit ${itemName}` : `Add New ${itemName}`}
@@ -228,7 +228,7 @@ const AdminManagement = ({
                             </button>
                         </div>
 
-                        <form onSubmit={handleSubmit} className="p-6 overflow-y-auto (100vh-12rem)]">
+                        <form onSubmit={handleSubmit} className="p-6 overflow-y-auto max-h-[calc(100vh-12rem)]">
                             {error && (
                                 <div className="mb-6 p-4 bg-red-50 border border-red-100 text-red-600 rounded-xl flex items-center gap-3 text-sm animate-shake">
                                     <AlertCircle size={18} />
@@ -314,7 +314,7 @@ const AdminManagement = ({
             {/* Delete Confirmation Modal */}
             {isDeleteModalOpen && (
                 <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-corporate-navy/40 backdrop-blur-sm animate-in fade-in duration-300">
-                    <div className="bg-white w-full  rounded-2xl shadow-2xl p-8 animate-in zoom-in-95 duration-300">
+                    <div className="bg-white w-full max-w-md rounded-2xl shadow-2xl p-8 animate-in zoom-in-95 duration-300">
                         <div className="w-16 h-16 bg-red-50 rounded-full flex items-center justify-center mx-auto mb-6">
                             <Trash2 className="text-red-600" size={30} />
                         </div>

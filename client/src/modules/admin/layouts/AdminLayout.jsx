@@ -26,7 +26,7 @@ const AdminLayout = () => {
 
         {/* ✅ Content */}
         <main className="flex-1 p-6 mt-16 overflow-y-auto">
-          <div className=" mx-auto">
+          <div className="max-w-7xl mx-auto">
             <Outlet />
           </div>
         </main>

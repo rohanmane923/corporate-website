@@ -59,7 +59,7 @@ const BlogEditor = ({ value, onChange, placeholder = 'Start writing your blog co
             }),
             Image.configure({
                 HTMLAttributes: {
-                    class: 'rounded-xl  h-auto my-6',
+                    class: 'rounded-xl max-w-full h-auto my-6',
                 },
             }),
             TextAlign.configure({
@@ -235,7 +235,7 @@ const BlogEditor = ({ value, onChange, placeholder = 'Start writing your blog co
             </div>
 
             {/* Content Area */}
-            <div className="prose prose-sm  p-4 min-h-[400px]">
+            <div className="prose prose-sm max-w-none p-4 min-h-[400px]">
                 <EditorContent editor={editor} />
             </div>
 

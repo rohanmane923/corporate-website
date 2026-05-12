@@ -43,7 +43,7 @@ navigate('/admin/dashboard');
 
     return (
         <div className="min-h-screen bg-white flex flex-col justify-center py-12 sm:px-6 lg:px-8">
-            <div className="sm:mx-auto sm:w-full sm:">
+            <div className="sm:mx-auto sm:w-full sm:max-w-md">
                 {/* Logo or Brand */}
                 <div className="text-center">
                     <h2 className="text-4xl font-extrabold text-corporate-navy">
@@ -55,7 +55,7 @@ navigate('/admin/dashboard');
                 </div>
             </div>
 
-            <div className="mt-8 sm:mx-auto sm:w-full sm:">
+            <div className="mt-8 sm:mx-auto sm:w-full sm:max-w-md">
                 <div className="bg-white py-10 px-6 shadow-2xl shadow-gray-200/50 rounded-2xl border border-gray-100 sm:px-10">
                     <form className="space-y-6" onSubmit={handleSubmit}>
                         <div>

@@ -53,12 +53,12 @@ const AdminEnquiryPage = () => {
   if (loading) return <p className="p-6">Loading...</p>;
 
   return (
-    <div className=" mx-auto py-6 space-y-8 bg-gray-50 min-h-screen">
+    <div className="max-w-7xl mx-auto py-6 space-y-8 bg-gray-50 min-h-screen">
 
       {/* HEADER */}
       <div className="mb-6">
         <h1 className="text-2xl font-bold text-corporate-navy tracking-tight">Enquiries</h1>
-        <p className="text-gray-500 text-sm mt-2 ">
+        <p className="text-gray-500 text-sm mt-2 max-w-2xl">
           Manage all customer enquiries with a polished admin experience matching the blog and news pages.
         </p>
       </div>
