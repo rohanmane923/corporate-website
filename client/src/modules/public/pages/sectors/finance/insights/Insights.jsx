@@ -11,7 +11,7 @@ import ann1 from "../../../../../../assets/announcement image.png";
 import blog2 from "../../../../../../assets/blog image (1).png";
 import press2 from "../../../../../../assets/Press image (1).png";
 import ann2 from "../../../../../../assets/announcement image (1).png";
-import gov from "../../../../../../assets/governance image.png";
+import gov from "../../../../../../assets/Governance image.png";
 
 const insights = [
   {
