@@ -154,7 +154,7 @@ const SectorPage = () => {
       />
 
       {/* Top Cards Section */}
-      <section className="max-w-7xl mx-auto px-8 sm:px-12 lg:px-20 py-16">
+      <section className=" mx-auto px-8 sm:px-12 lg:px-20 py-16">
         <div className="text-left mb-12">
           <p className="text-orange-500 font-semibold uppercase tracking-[0.35em] mb-3">
             Our Key Sectors
@@ -206,7 +206,7 @@ const SectorPage = () => {
 
       {/* Detail Sections */}
       <section className="bg-[#f7f9fb] py-16">
-        <div className="max-w-7xl mx-auto px-8 sm:px-12 lg:px-20">
+        <div className=" mx-auto px-8 sm:px-12 lg:px-20">
           <div className="grid gap-10">
             {detailSections.map((section, index) => (
               <motion.div
@@ -263,7 +263,7 @@ const SectorPage = () => {
                       </h2>
                     </div>
 
-                    <p className="text-gray-600 text-base leading-relaxed max-w-3xl">
+                    <p className="text-gray-600 text-base leading-relaxed ">
                       {section.subtitle}
                     </p>
                   </div>

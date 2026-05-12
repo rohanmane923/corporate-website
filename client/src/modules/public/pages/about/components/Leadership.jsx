@@ -4,7 +4,7 @@ import leadershipImg from "../../../../../assets/corporateLeader.png"; //
 const Leadership = () => {
   return (
     <div className="bg-gray-50 py-20">
-      <div className="max-w-6xl mx-auto px-6">
+      <div className="w-full mx-auto px-8 sm:px-12 lg:px-20">
 
         {/*  GRID */}
         <div className="grid md:grid-cols-2 gap-12 items-center">

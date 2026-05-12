@@ -6,7 +6,7 @@ import { Link } from "react-router-dom";
 const About = () => {
   return (
     <section className="py-16 bg-gray-100">
-      <div className="w-full max-w-7xl mx-auto px-8 sm:px-12 lg:px-20 grid md:grid-cols-2 gap-10 items-center">
+      <div className="w-full  mx-auto px-8 sm:px-12 lg:px-20 grid md:grid-cols-2 gap-10 items-center">
 
         {/* 🔥 IMAGE ANIMATION (LEFT) */}
         <motion.img

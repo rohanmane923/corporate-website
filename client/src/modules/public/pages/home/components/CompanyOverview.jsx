@@ -3,7 +3,7 @@ import { motion } from "framer-motion";
 const CompanyOverview = () => {
   return (
     <section className="py-16 bg-white">
-      <div className="w-full max-w-7xl mx-auto px-8 sm:px-12 lg:px-20">
+      <div className="w-full  mx-auto px-8 sm:px-12 lg:px-20">
 
         {/* 🔥 HEADING ANIMATION */}
         <motion.div
@@ -16,7 +16,7 @@ const CompanyOverview = () => {
           <h2 className="text-2xl sm:text-3xl font-bold mb-3 text-orange-500">
             Company Overview
           </h2>
-          <p className="text-gray-500 text-sm max-w-2xl mx-auto">
+          <p className="text-gray-500 text-sm  mx-auto">
             A dynamic ecosystem focused on innovation, sustainability, and global impact across multiple industries.
           </p>
         </motion.div>

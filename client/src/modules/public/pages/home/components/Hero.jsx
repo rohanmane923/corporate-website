@@ -7,14 +7,14 @@ const Hero = () => {
     <section className="relative min-h-screen flex items-center">
 
       <div className="absolute inset-0">
-        <img src={heroBg} alt="hero" className="w-full h-full object-cover" />
+        <img src={heroBg} alt="hero" className="w-full h-full object-cover object-center" />
         {/* <div className="absolute inset-0 bg-[#0c2438]/75"></div> */}
         <div className="absolute inset-0 bg-gradient-to-r from-black/40 via-black/20 to-transparent"></div>
         {/* <div className="absolute inset-0 bg-gradient-to-r from-[#0c2438]/90 via-[#163b5c]/60 to-transparent"></div> */}
       </div>
 
-      <div className="relative z-10 w-full max-w-7xl mx-auto px-8 sm:px-12 lg:px-20 pt-24 pb-16 text-white">
-        <div className="max-w-2xl">
+      <div className="relative z-10 w-full  mx-auto px-8 sm:px-12 lg:px-20 pt-24 pb-16 text-white">
+        <div className="">
 
           {/* 🔥 HEADING ANIMATION */}
           <motion.h1

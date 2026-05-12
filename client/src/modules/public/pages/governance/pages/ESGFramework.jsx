@@ -55,7 +55,7 @@ const ESGFramework = () => {
   image={governanceImg}
 />
       {/* 🔥 ESG PILLARS */}
-      <section className="max-w-7xl mx-auto px-6 sm:px-10 lg:px-16 py-24">
+      <section className="w-full mx-auto max-w-screen-2xl px-8 sm:px-12 lg:px-20 py-24">
 
         <div className="grid md:grid-cols-3 gap-12">
 
@@ -118,7 +118,7 @@ const ESGFramework = () => {
       {/* 🔥 PREMIUM COMMITMENT SECTION */}
       <section className="bg-gradient-to-b from-white to-[#f5f7fa] py-24">
 
-        <div className="max-w-5xl mx-auto px-6">
+        <div className="w-full mx-auto max-w-screen-2xl px-8 sm:px-12 lg:px-20">
 
           <motion.div
             initial={{ opacity: 0, y: 60 }}
@@ -136,7 +136,7 @@ const ESGFramework = () => {
             </h2>
 
             {/* TEXT */}
-            <p className="text-gray-600 text-lg leading-relaxed max-w-3xl mx-auto">
+            <p className="text-gray-600 text-lg leading-relaxed  mx-auto">
               We are dedicated to embedding ESG principles into every aspect of our
               operations. By aligning sustainability with innovation, we aim to create
               long-term value while contributing positively to society and the

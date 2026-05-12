@@ -7,7 +7,7 @@ const Sectors = () => {
 
   return (
     <section className="py-16 bg-white overflow-hidden">
-      <div className="w-full max-w-7xl mx-auto px-8 sm:px-12 lg:px-20">
+      <div className="w-full  mx-auto px-8 sm:px-12 lg:px-20">
 
         <div className="flex justify-between items-center mb-10 flex-wrap gap-4">
           <div>

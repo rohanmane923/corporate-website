@@ -10,7 +10,7 @@ const Footer = () => {
     <footer className="bg-[#0c2438] text-white pt-12 pb-6">
 
       {/* ✅ ONLY THIS LINE CHANGED */}
-      <div className="w-full max-w-7xl mx-auto px-8 sm:px-12 lg:px-20 grid md:grid-cols-4 gap-10">
+      <div className="w-full  mx-auto px-8 sm:px-12 lg:px-20 grid md:grid-cols-4 gap-10">
 
         {/* LOGO + SOCIAL */}
 

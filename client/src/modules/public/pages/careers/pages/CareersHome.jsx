@@ -94,7 +94,7 @@
 //       >
 //         <div className="absolute inset-0 bg-[#0c2438]/70"></div>
 
-//         <div className="relative z-10 text-white max-w-lg">
+//         <div className="relative z-10 text-white ">
 //           <h2 className="text-2xl md:text-3xl font-bold">
 //             Didn’t find a suitable role?
 //           </h2>
@@ -186,7 +186,7 @@ const CareersHome = () => {
           image={careerImg}
         />
 
-        <div className="absolute z-20 bottom-8 md:bottom-16 left-0 w-full flex justify-center md:justify-start px-4 sm:px-8 md:px-12 lg:px-20">
+        <div className="absolute z-20 bottom-8 md:bottom-16 left-0 w-full flex justify-center md:justify-start px-8 sm:px-12 lg:px-20">
           <button
             onClick={scrollToJobs}
             className="bg-orange-500 px-6 py-3 text-white font-bold rounded-lg
@@ -199,14 +199,14 @@ const CareersHome = () => {
       </div>
 
       {/* WHY WORK */}
-      <div className="py-16 px-6 md:px-16 bg-white">
+      <div className="py-16 px-8 sm:px-12 lg:px-20 bg-white">
         <WhyWork />
       </div>
 
       {/* JOB SECTION */}
       <div
         ref={jobSectionRef}
-        className="py-16 px-6 md:px-16 bg-gray-50"
+        className="py-16 px-8 sm:px-12 lg:px-20 bg-gray-50"
       >
         <h2 className="text-2xl md:text-3xl font-bold text-orange-500 mb-8">
           Open Positions
@@ -225,7 +225,7 @@ const CareersHome = () => {
 
       {/* RESUME SECTION */}
       <div
-        className="relative h-[260px] md:h-[320px] flex items-center px-6 md:px-16"
+        className="relative h-[260px] md:h-[320px] flex items-center px-8 sm:px-12 lg:px-20"
         style={{
           backgroundImage: `url(${resumeImg})`,
           backgroundSize: "cover",
@@ -234,7 +234,7 @@ const CareersHome = () => {
       >
         <div className="absolute inset-0 bg-[#0c2438]/70"></div>
 
-        <div className="relative z-10 text-white max-w-lg">
+        <div className="relative z-10 text-white ">
           <h2 className="text-2xl md:text-3xl font-bold">
             Didn’t find a suitable role?
           </h2>

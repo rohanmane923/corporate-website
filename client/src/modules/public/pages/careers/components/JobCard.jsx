@@ -51,7 +51,7 @@ const JobCard = ({ job }) => {
           </div>
 
           {/* DESCRIPTION */}
-          {/* <p className="text-gray-500 text-sm mt-3 max-w-xl">
+          {/* <p className="text-gray-500 text-sm mt-3 ">
             {job.description}
           </p> */}
         </div>

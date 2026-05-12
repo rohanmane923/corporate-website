@@ -2,7 +2,7 @@ import { motion } from "framer-motion";
 
 const CompanyOverview = () => {
   return (
-    <div className="max-w-6xl mx-auto px-6 py-20">
+    <div className="w-full mx-auto px-8 sm:px-12 lg:px-20 py-20">
       
       <motion.h2
         initial={{ opacity: 0, y: 40 }}

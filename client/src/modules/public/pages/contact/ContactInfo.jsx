@@ -21,7 +21,7 @@ const ContactPage = () => {
 />
 
       {/* 🔷 MAIN SECTION */}
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-10 py-12 grid lg:grid-cols-2 gap-8 items-stretch">
+      <div className="w-full mx-auto px-8 sm:px-12 lg:px-20 py-12 grid lg:grid-cols-2 gap-8 items-stretch">
 
         {/* 🏢 LEFT CARD */}
         <div className="bg-white border rounded-2xl p-6 shadow-sm flex flex-col h-full">
@@ -114,7 +114,7 @@ const ContactPage = () => {
       </div>
 
       {/* 📍 LOCATION */}
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-10 pb-14">
+      <div className="w-full mx-auto px-8 sm:px-12 lg:px-20 pb-14">
         <div className="bg-white border rounded-xl p-5 shadow-sm">
 
           <h3 className="text-lg font-semibold text-gray-700">

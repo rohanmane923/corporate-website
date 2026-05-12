@@ -25,7 +25,7 @@ const Governance = () => {
       />
 
       {/* 🔷 BOARD */}
-      <section className="bg-[#f5f7fa] max-w-7xl mx-auto px-8 sm:px-12 lg:px-20 py-20">
+      <section className="bg-[#f5f7fa]  mx-auto px-8 sm:px-12 lg:px-20 py-20">
 
         <div className="flex justify-between items-center mb-6">
           <div>
@@ -57,7 +57,7 @@ const Governance = () => {
       </section>
 
       {/* 🔷 ESG */}
-      <section className="bg-white max-w-7xl mx-auto px-8 sm:px-12 lg:px-20 py-20">
+      <section className="bg-white  mx-auto px-8 sm:px-12 lg:px-20 py-20">
 
         <div className="flex justify-between items-center mb-6">
           <div>
@@ -90,7 +90,7 @@ const Governance = () => {
       </section>
 
       {/* 🔷 POLICIES */}
-      <section className="bg-[#f5f7fa] max-w-7xl mx-auto px-8 sm:px-12 lg:px-20 py-20">
+      <section className="bg-[#f5f7fa]  mx-auto px-8 sm:px-12 lg:px-20 py-20">
 
         <div className="grid md:grid-cols-[1fr_1.4fr] gap-16 items-start">
 
@@ -132,7 +132,7 @@ const Governance = () => {
       </section>
 
       {/* 🔷 COMPLIANCE */}
-      <section className="bg-white max-w-7xl mx-auto px-8 sm:px-12 lg:px-20 py-24">
+      <section className="bg-white  mx-auto px-8 sm:px-12 lg:px-20 py-24">
 
         <div className="flex justify-between items-center mb-16">
 
@@ -141,7 +141,7 @@ const Governance = () => {
               Compliance
             </h2>
 
-            <p className="text-gray-500 mt-3 max-w-xl">
+            <p className="text-gray-500 mt-3 ">
               We comply with all applicable laws, regulations and global standards to ensure trust and accountability.
             </p>
           </div>

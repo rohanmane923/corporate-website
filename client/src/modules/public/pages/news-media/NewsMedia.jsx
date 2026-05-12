@@ -110,12 +110,12 @@ const NewsMedia = () => {
           <div className="absolute inset-0 bg-gradient-to-r from-corporate-navy via-transparent to-transparent opacity-90"></div>
         </div>
 
-        <div className="w-full max-w-7xl mx-auto px-8 sm:px-12 lg:px-20 relative z-10">
+        <div className="w-full  mx-auto px-8 sm:px-12 lg:px-20 relative z-10">
           <motion.div
             initial={{ opacity: 0, x: -50 }}
             animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.8 }}
-            className="max-w-3xl"
+            className=""
           >
             <h1 className="text-5xl md:text-6xl font-bold text-white mb-6">
               News & <span className="text-corporate-orange">Media</span>
@@ -129,7 +129,7 @@ const NewsMedia = () => {
 
       {/* Filters & Search */}
       <section className="py-8 bg-white border-b">
-        <div className="w-full max-w-7xl mx-auto px-8 sm:px-12 lg:px-20">
+        <div className="w-full  mx-auto px-8 sm:px-12 lg:px-20">
           <div className="flex flex-col lg:flex-row lg:items-center justify-between gap-6">
             {/* Tabs */}
             <div className="flex flex-wrap gap-3">
@@ -149,7 +149,7 @@ const NewsMedia = () => {
             </div>
 
             {/* Search */}
-            <div className="relative max-w-md w-full">
+            <div className="relative  w-full">
               <input
                 type="text"
                 placeholder="Search news..."
@@ -172,7 +172,7 @@ const NewsMedia = () => {
 
       {/* Grid */}
       <section className="py-16">
-        <div className="w-full max-w-7xl mx-auto px-8 sm:px-12 lg:px-20">
+        <div className="w-full  mx-auto px-8 sm:px-12 lg:px-20">
           {loading ? (
             <div className="flex justify-center py-20">
               <div className="animate-spin rounded-full h-12 w-12 border-t-2 border-b-2 border-corporate-orange"></div>

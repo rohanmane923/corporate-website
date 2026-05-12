@@ -62,7 +62,7 @@ const Policies = () => {
 />
 
       {/* 🔥 POLICY CARDS */}
-      <section className="max-w-5xl mx-auto px-6 sm:px-10 lg:px-16 py-20 space-y-5">
+      <section className="w-full mx-auto max-w-screen-2xl px-8 sm:px-12 lg:px-20 py-20 space-y-5">
 
         {policies.map((policy, index) => {
           const isActive = activeId === policy.id;

@@ -55,73 +55,73 @@ const EnquiryForm = ({ onSuccess }) => {
   };
 
   return (
-    <form onSubmit={handleSubmit} className="space-y-4">
+    <form onSubmit={handleSubmit} className="space-y-5">
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-5">
+        {/* FULL NAME */}
+        <div>
+          <label className="text-sm font-semibold text-gray-700 mb-1 block">
+            Full Name
+          </label>
+          <input
+            name="name"
+            value={form.name}
+            onChange={handleChange}
+            placeholder="Enter your full name"
+            className="w-full border border-gray-200 p-3.5 rounded-xl focus:outline-none focus:ring-2 focus:ring-orange-500/20 focus:border-orange-500 transition-all bg-gray-50/50"
+          />
+        </div>
 
-      {/* FULL NAME */}
-      <div>
-        <label className="text-sm font-medium text-gray-600">
-          Full Name
-        </label>
-        <input
-          name="name"
-          value={form.name}
-          onChange={handleChange}
-          placeholder="Enter full name"
-          className="w-full mt-1 border border-gray-300 p-3 rounded-lg focus:outline-none focus:ring-2 focus:ring-orange-400"
-        />
-      </div>
-
-      {/* MOBILE */}
-      <div>
-        <label className="text-sm font-medium text-gray-600">
-          Mobile Number
-        </label>
-        <input
-          name="phone"
-          value={form.phone}
-          onChange={handleChange}
-          placeholder="Enter mobile number"
-          className="w-full mt-1 border border-gray-300 p-3 rounded-lg focus:outline-none focus:ring-2 focus:ring-orange-400"
-        />
+        {/* MOBILE */}
+        <div>
+          <label className="text-sm font-semibold text-gray-700 mb-1 block">
+            Mobile Number
+          </label>
+          <input
+            name="phone"
+            value={form.phone}
+            onChange={handleChange}
+            placeholder="Enter mobile number"
+            className="w-full border border-gray-200 p-3.5 rounded-xl focus:outline-none focus:ring-2 focus:ring-orange-500/20 focus:border-orange-500 transition-all bg-gray-50/50"
+          />
+        </div>
       </div>
 
       {/* EMAIL */}
       <div>
-        <label className="text-sm font-medium text-gray-600">
+        <label className="text-sm font-semibold text-gray-700 mb-1 block">
           Email Address
         </label>
         <input
           name="email"
           value={form.email}
           onChange={handleChange}
-          placeholder="Enter email address"
-          className="w-full mt-1 border border-gray-300 p-3 rounded-lg focus:outline-none focus:ring-2 focus:ring-orange-400"
+          placeholder="Enter your email address"
+          className="w-full border border-gray-200 p-3.5 rounded-xl focus:outline-none focus:ring-2 focus:ring-orange-500/20 focus:border-orange-500 transition-all bg-gray-50/50"
         />
       </div>
 
       {/* MESSAGE */}
       <div>
-        <label className="text-sm font-medium text-gray-600">
+        <label className="text-sm font-semibold text-gray-700 mb-1 block">
           Message
         </label>
         <textarea
           name="message"
           value={form.message}
           onChange={handleChange}
-          placeholder="Type your message here..."
+          placeholder="How can we help you?"
           rows="4"
-          className="w-full mt-1 border border-gray-300 p-3 rounded-lg focus:outline-none focus:ring-2 focus:ring-orange-400 resize-none"
+          className="w-full border border-gray-200 p-3.5 rounded-xl focus:outline-none focus:ring-2 focus:ring-orange-500/20 focus:border-orange-500 transition-all bg-gray-50/50 resize-none"
         />
       </div>
 
       {/* BUTTON */}
       <button
         disabled={loading}
-        className="w-full bg-orange-500 hover:bg-orange-600 disabled:bg-orange-300 transition-all duration-300 text-white py-3 rounded-lg font-medium"
+        className="w-full bg-orange-500 hover:bg-orange-600 disabled:bg-orange-300 transition-all duration-300 text-white py-4 rounded-xl font-bold shadow-lg shadow-orange-500/30 hover:shadow-orange-500/40 active:scale-[0.98]"
       >
-        {loading ? "Submitting..." : "Submit"}
+        {loading ? "Submitting..." : "Send Message"}
       </button>
-
     </form>
   );
 };

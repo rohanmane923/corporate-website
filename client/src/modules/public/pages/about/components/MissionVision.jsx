@@ -3,7 +3,7 @@ import { motion } from "framer-motion";
 const MissionVision = () => {
   return (
     <div className="py-20">
-      <div className="max-w-6xl mx-auto px-6 grid md:grid-cols-2 gap-10">
+      <div className="w-full mx-auto px-8 sm:px-12 lg:px-20 grid md:grid-cols-2 gap-10">
 
         {[
           {

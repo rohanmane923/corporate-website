@@ -30,7 +30,7 @@ const About = () => {
         image={about}
       />
       {/* 🔹 Who We Are */}
-      <div className="max-w-6xl mx-auto px-6 py-16 grid md:grid-cols-2 gap-12 items-center">
+      <div className="w-full mx-auto px-8 sm:px-12 lg:px-20 py-16 grid md:grid-cols-2 gap-12 items-center">
         {/* Image */}
         <div>
           <img
@@ -83,7 +83,7 @@ const About = () => {
 
       {/* 🔹 Achievements */}
       <div className="bg-white py-16">
-        <div className="max-w-6xl mx-auto px-6 text-center">
+        <div className="w-full mx-auto px-8 sm:px-12 lg:px-20 text-center">
           <h2 className="text-3xl font-semibold text-orange-500 mb-12">
             Our Achievements
           </h2>
