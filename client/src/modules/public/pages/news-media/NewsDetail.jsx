@@ -140,12 +140,12 @@ const NewsDetail = () => {
         <div className="absolute inset-0 bg-gradient-to-t from-corporate-navy via-transparent to-transparent opacity-90"></div>
         
         <div className="absolute bottom-0 left-0 w-full p-8 md:p-16">
-          <div className="w-full max-w-7xl mx-auto px-8 sm:px-12 lg:px-20">
+          <div className="w-full  mx-auto px-8 sm:px-12 lg:px-20">
             <motion.div
               initial={{ opacity: 0, y: 30 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.2, duration: 0.6 }}
-              className="max-w-4xl"
+              className=""
             >
               <div className="flex items-center gap-4 mb-6">
                 <span className="bg-corporate-orange text-white px-4 py-1.5 rounded-md text-xs font-bold uppercase tracking-widest">
@@ -177,7 +177,7 @@ const NewsDetail = () => {
 
       {/* Main Content */}
       <section className="py-16 md:py-24">
-        <div className="w-full max-w-7xl mx-auto px-8 sm:px-12 lg:px-20">
+        <div className="w-full  mx-auto px-8 sm:px-12 lg:px-20">
           <div className="flex flex-col lg:flex-row gap-16">
             {/* Left Column: Article Body */}
             <motion.article 
@@ -353,7 +353,7 @@ const NewsDetail = () => {
       
       {/* Newsletter / CTA Section (Alternative) */}
       <section className="py-20 bg-slate-50">
-        <div className="w-full max-w-7xl mx-auto px-8 sm:px-12 lg:px-20 text-center">
+        <div className="w-full  mx-auto px-8 sm:px-12 lg:px-20 text-center">
             <Link 
                 to="/news"
                 className="inline-flex items-center gap-2 text-corporate-navy font-bold hover:text-corporate-orange transition-colors"

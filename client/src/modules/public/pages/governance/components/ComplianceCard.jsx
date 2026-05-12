@@ -29,7 +29,7 @@ const ComplianceCard = ({ title, index }) => {
       </h3>
 
       {/* DESC */}
-      <p className="text-sm text-gray-500 mt-3 leading-relaxed max-w-[220px]">
+      <p className="text-sm text-gray-500 mt-3 leading-relaxed ]">
         {descriptions[index]}
       </p>
 

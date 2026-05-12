@@ -20,7 +20,7 @@ const HeroSection = ({ title, description, image }) => {
       </div>
 
       {/* CONTENT */}
-      <div className="relative z-10 w-full max-w-7xl mx-auto px-8 sm:px-12 lg:px-20 py-20 text-white">
+      <div className="relative z-10 w-full  mx-auto px-8 sm:px-12 lg:px-20 py-20 text-white">
 
         <motion.div
           initial="hidden"
@@ -31,7 +31,7 @@ const HeroSection = ({ title, description, image }) => {
               transition: { staggerChildren: 0.2 },
             },
           }}
-          className="max-w-2xl"
+          className=""
         >
 
           {/* TITLE */}

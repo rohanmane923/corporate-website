@@ -69,7 +69,7 @@ const News = () => {
 
   return (
     <section className="py-16 bg-gray-100">
-      <div className="w-full max-w-7xl mx-auto px-8 sm:px-12 lg:px-20">
+      <div className="w-full  mx-auto px-8 sm:px-12 lg:px-20">
 
         {/* 🔥 HEADING ANIMATION */}
         <motion.div
@@ -89,7 +89,7 @@ const News = () => {
           </div>
 
           <button
-            onClick={() => navigate("/news")}
+            onClick={() => navigate("/announcements")}
             className="text-blue-500 text-sm hover:underline"
           >
             View All Articles →
@@ -122,7 +122,7 @@ const News = () => {
                   hidden: { opacity: 0, y: 50 },
                   visible: { opacity: 1, y: 0 }
                 }}
-                onClick={() => navigate(`/news/${item.displayType}s/${item.slug}`)}
+                onClick={() => navigate(`/announcements/${item.displayType}s/${item.slug}`)}
                 className="bg-white rounded-lg shadow hover:shadow-2xl transition overflow-hidden group cursor-pointer"
               >
                 <div className="relative overflow-hidden">
@@ -164,3 +164,6 @@ const News = () => {
 };
 
 export default News;
+
+
+

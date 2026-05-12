@@ -267,7 +267,7 @@ const CaseStudyDetail = () => {
       {/* Back Navigation */}
       <motion.div
         variants={itemVariants}
-        className="max-w-7xl mx-auto px-8 sm:px-12 lg:px-20 py-8"
+        className=" mx-auto px-8 sm:px-12 lg:px-20 py-8"
       >
         <button
           onClick={() => navigate('/sectors/logistics')}
@@ -281,9 +281,9 @@ const CaseStudyDetail = () => {
       {/* Overview Section */}
       <motion.section
         variants={itemVariants}
-        className="max-w-7xl mx-auto px-8 sm:px-12 lg:px-20 py-16"
+        className=" mx-auto px-8 sm:px-12 lg:px-20 py-16"
       >
-        <div className="max-w-4xl">
+        <div className="">
           <h2 className="text-3xl font-bold text-gray-900 mb-6">Project Overview</h2>
           <p className="text-lg text-gray-600 leading-relaxed mb-8">
             {caseStudy.overview}
@@ -293,7 +293,7 @@ const CaseStudyDetail = () => {
 
       {/* Challenge & Solution */}
       <section className="bg-gray-50 py-16">
-        <div className="max-w-7xl mx-auto px-8 sm:px-12 lg:px-20">
+        <div className=" mx-auto px-8 sm:px-12 lg:px-20">
           <div className="grid gap-12 lg:grid-cols-2">
             <motion.div
               variants={itemVariants}
@@ -329,11 +329,11 @@ const CaseStudyDetail = () => {
       {/* Results */}
       <motion.section
         variants={itemVariants}
-        className="max-w-7xl mx-auto px-8 sm:px-12 lg:px-20 py-16"
+        className=" mx-auto px-8 sm:px-12 lg:px-20 py-16"
       >
         <div className="text-center mb-12">
           <h2 className="text-3xl font-bold text-gray-900 mb-4">Measurable Results</h2>
-          <p className="text-lg text-gray-600 max-w-2xl mx-auto">
+          <p className="text-lg text-gray-600  mx-auto">
             The implementation delivered significant improvements across key performance indicators
           </p>
         </div>
@@ -361,13 +361,13 @@ const CaseStudyDetail = () => {
 
       {/* Key Features */}
       <section className="bg-gray-50 py-16">
-        <div className="max-w-7xl mx-auto px-8 sm:px-12 lg:px-20">
+        <div className=" mx-auto px-8 sm:px-12 lg:px-20">
           <motion.div
             variants={itemVariants}
             className="text-center mb-12"
           >
             <h2 className="text-3xl font-bold text-gray-900 mb-4">Key Features Implemented</h2>
-            <p className="text-lg text-gray-600 max-w-2xl mx-auto">
+            <p className="text-lg text-gray-600  mx-auto">
               Comprehensive solutions tailored to address specific business challenges
             </p>
           </motion.div>
@@ -390,10 +390,10 @@ const CaseStudyDetail = () => {
       {/* Testimonial */}
       <motion.section
         variants={itemVariants}
-        className="max-w-7xl mx-auto px-8 sm:px-12 lg:px-20 py-16"
+        className=" mx-auto px-8 sm:px-12 lg:px-20 py-16"
       >
         <div className="bg-gradient-to-r from-blue-50 to-orange-50 rounded-3xl p-8 md:p-12">
-          <div className="max-w-4xl mx-auto text-center">
+          <div className=" mx-auto text-center">
             <blockquote className="text-xl md:text-2xl font-medium text-gray-900 mb-8 leading-relaxed">
               "{caseStudy.testimonial.quote}"
             </blockquote>
@@ -408,7 +408,7 @@ const CaseStudyDetail = () => {
       {/* Gallery */}
       <motion.section
         variants={itemVariants}
-        className="max-w-7xl mx-auto px-8 sm:px-12 lg:px-20 py-16"
+        className=" mx-auto px-8 sm:px-12 lg:px-20 py-16"
       >
         <div className="text-center mb-12">
           <h2 className="text-3xl font-bold text-gray-900 mb-4">Project Gallery</h2>
@@ -440,9 +440,9 @@ const CaseStudyDetail = () => {
         variants={itemVariants}
         className="bg-gray-900 text-white py-16"
       >
-        <div className="max-w-7xl mx-auto px-8 sm:px-12 lg:px-20 text-center">
+        <div className=" mx-auto px-8 sm:px-12 lg:px-20 text-center">
           <h2 className="text-3xl font-bold mb-4">Ready to Transform Your Logistics?</h2>
-          <p className="text-xl text-gray-300 mb-8 max-w-2xl mx-auto">
+          <p className="text-xl text-gray-300 mb-8  mx-auto">
             Discover how our proven strategies can optimize your supply chain and drive business growth.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">

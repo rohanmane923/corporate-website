@@ -110,7 +110,7 @@ const Dashboard = () => {
     }
 
     return (
-        <div className="max-w-7xl mx-auto px-6 py-6 space-y-8 animate-in fade-in duration-500">
+        <div className=" mx-auto px-6 py-6 space-y-8 animate-in fade-in duration-500">
             {/* Header Section */}
             <div className="flex flex-col md:flex-row md:items-center justify-between gap-4">
                 <div>
@@ -118,7 +118,7 @@ const Dashboard = () => {
                         <LayoutDashboard size={18} />
                         <span className="text-sm font-bold uppercase tracking-wider">Control Panel</span>
                     </div>
-                    <h1 className="text-3xl font-extrabold text-corporate-navy tracking-tight">Performance Overview</h1>
+                    <h1 className="text-2xl font-bold text-corporate-navy tracking-tight">Performance Overview</h1>
                     <p className="text-gray-500 mt-1">Real-time statistics and management tools for your platform.</p>
                 </div>
                 <div className="flex gap-3">

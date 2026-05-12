@@ -17,8 +17,8 @@ const LifeAtCompany = () => {
       />
 
       {/* INTRO */}
-      <div className="px-6 md:px-16 py-12 bg-gray-50">
-        <div className="max-w-4xl">
+      <div className="px-8 sm:px-12 lg:px-20 py-12 bg-gray-50">
+        <div className="">
           <h2 className="text-2xl font-bold text-orange-500 mb-4">
             Our Culture
           </h2>
@@ -37,7 +37,7 @@ const LifeAtCompany = () => {
       <FeatureSection />
 
       {/* EXPERIENCE */}
-      <div className="px-6 md:px-16 py-12 bg-gray-50">
+      <div className="px-8 sm:px-12 lg:px-20 py-12 bg-gray-50">
 
         <div className="grid md:grid-cols-2 gap-8 items-center">
 

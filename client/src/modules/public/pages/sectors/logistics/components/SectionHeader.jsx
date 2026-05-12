@@ -5,7 +5,7 @@ const SectionHeader = ({ title, subtitle, actionLabel, actionTo }) => {
     <div className="flex flex-col gap-4 md:flex-row md:items-end md:justify-between">
       <div>
         <p className="text-orange-500 font-semibold uppercase tracking-[0.35em] mb-2">{title}</p>
-        <h2 className="text-3xl sm:text-4xl font-bold text-corporate-navy max-w-2xl">{subtitle}</h2>
+        <h2 className="text-3xl sm:text-4xl font-bold text-corporate-navy ">{subtitle}</h2>
       </div>
       {actionLabel && actionTo && (
         <Link

@@ -104,7 +104,7 @@ const LogisticsOverview = () => {
         image={heroImage}
       />
 
-      <section id="overview" className="max-w-7xl mx-auto px-8 sm:px-12 lg:px-20 py-16">
+      <section id="overview" className=" mx-auto px-8 sm:px-12 lg:px-20 py-16">
         <div className="grid gap-10 lg:grid-cols-[0.95fr_1fr] items-center">
           {/* <motion.div
             initial={{ opacity: 0, x: -40 }}
@@ -135,7 +135,7 @@ const LogisticsOverview = () => {
             <div>
               <p className="text-orange-500 font-semibold uppercase tracking-[0.35em] mb-3">Overview</p>
               <h1 className="text-4xl font-bold text-corporate-navy mb-4">Moving Business Forward, Together</h1>
-              <p className="text-gray-500 leading-relaxed max-w-2xl">
+              <p className="text-gray-500 leading-relaxed ">
                 At Logistics, we combine global reach with local expertise to provide seamless logistics and supply chain solutions. From transportation and warehousing to distribution and last-mile delivery, we ensure your goods move efficiently, safely, and on time.
               </p>
             </div>
@@ -163,7 +163,7 @@ const LogisticsOverview = () => {
       </section>
 
       <section id="services" className="bg-[#f7f9fb] py-16">
-        <div className="max-w-7xl mx-auto px-8 sm:px-12 lg:px-20">
+        <div className=" mx-auto px-8 sm:px-12 lg:px-20">
           <SectionHeader
             title="Services"
             subtitle="Comprehensive solutions designed to streamline your supply chain and drive efficiency."
@@ -179,7 +179,7 @@ const LogisticsOverview = () => {
         </div>
       </section>
 
-      <section id="case-studies" className="max-w-7xl mx-auto px-8 sm:px-12 lg:px-20 py-16">
+      <section id="case-studies" className=" mx-auto px-8 sm:px-12 lg:px-20 py-16">
         <div className="flex flex-col gap-4 md:flex-row md:items-end md:justify-between">
           <div>
             <p className="text-orange-500 font-semibold uppercase tracking-[0.35em] mb-2">Cash Studies</p>

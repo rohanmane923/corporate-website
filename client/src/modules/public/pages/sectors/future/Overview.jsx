@@ -71,7 +71,7 @@ const FutureOverview = () => {
       />
 
       {/* Overview Section */}
-      <section id="overview" className="max-w-7xl mx-auto px-8 sm:px-12 lg:px-20 py-16">
+      <section id="overview" className=" mx-auto px-8 sm:px-12 lg:px-20 py-16">
         <div className="grid gap-10 lg:grid-cols-[0.95fr_1fr] items-center">
           <motion.div
             initial={{ opacity: 0, x: -40 }}
@@ -95,7 +95,7 @@ const FutureOverview = () => {
               <h1 className="text-4xl font-bold text-corporate-navy mb-4">
                 Building the Future, One Innovation at a Time.
               </h1>
-              <p className="text-gray-500 leading-relaxed max-w-2xl">
+              <p className="text-gray-500 leading-relaxed ">
                 We are focused on sectors that exhibit high growth potential and the ability to create long-term impact. By combining capital with strategic expertise, we help pioneering companies scale their solutions and lead their industries.
               </p>
             </div>
@@ -128,10 +128,10 @@ const FutureOverview = () => {
 
       {/* Focus Areas Section */}
       <section id="focus-areas" className="bg-[#f7f9fb] py-16">
-        <div className="max-w-7xl mx-auto px-8 sm:px-12 lg:px-20">
+        <div className=" mx-auto px-8 sm:px-12 lg:px-20">
           <div className="text-center mb-12">
             <h2 className="text-4xl font-bold text-corporate-navy">Focus Areas</h2>
-            <p className="text-gray-500 mt-4 max-w-2xl mx-auto">
+            <p className="text-gray-500 mt-4  mx-auto">
               We focus on high-impact sectors where technology and sustainability intersect.
             </p>
           </div>

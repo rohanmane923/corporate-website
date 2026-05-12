@@ -112,7 +112,7 @@ const FinanceOverview = () => {
       />
 
       {/* Overview Section */}
-      <section id="overview" className="max-w-7xl mx-auto px-8 sm:px-12 lg:px-20 py-16">
+      <section id="overview" className=" mx-auto px-8 sm:px-12 lg:px-20 py-16">
         <div className="grid gap-10 lg:grid-cols-[0.95fr_1fr] items-center">
           <motion.div
             initial={{ opacity: 0, x: -40 }}
@@ -136,7 +136,7 @@ const FinanceOverview = () => {
               <h1 className="text-4xl font-bold text-corporate-navy mb-4">
                 Financial Expertise, Real Business Impact.
               </h1>
-              <p className="text-gray-500 leading-relaxed max-w-2xl">
+              <p className="text-gray-500 leading-relaxed ">
                 We partner with organizations to navigate complexity, optimize performance, and achieve sustainable growth. Our data-driven approach and domain expertise help you make smarter financial decisions with confidence.
               </p>
             </div>
@@ -169,7 +169,7 @@ const FinanceOverview = () => {
 
       {/* Services Section */}
       <section id="services" className="bg-[#f7f9fb] py-16">
-        <div className="max-w-7xl mx-auto px-8 sm:px-12 lg:px-20">
+        <div className=" mx-auto px-8 sm:px-12 lg:px-20">
           <SectionHeader
             title="Services"
             subtitle="Comprehensive solutions to strengthen your financial future."
@@ -186,7 +186,7 @@ const FinanceOverview = () => {
       </section>
 
       {/* Insights Section */}
-      <section id="insights" className="max-w-7xl mx-auto px-8 sm:px-12 lg:px-20 py-16">
+      <section id="insights" className=" mx-auto px-8 sm:px-12 lg:px-20 py-16">
         <div className="flex flex-col gap-4 md:flex-row md:items-end md:justify-between">
           <div>
             <p className="text-orange-500 font-semibold uppercase tracking-[0.35em] mb-2">

@@ -20,7 +20,7 @@ const data = [
 
 const WhyWork = () => {
   return (
-    <div className="bg-gray-50 py-16 px-6 md:px-16">
+    <div className="bg-gray-50">
 
       {/* TITLE */}
       <h2 className="text-2xl md:text-3xl font-bold text-orange-500 mb-10">

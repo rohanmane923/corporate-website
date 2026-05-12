@@ -113,13 +113,13 @@ const AdminJobsPage = () => {
   };
 
   return (
-    <div className="max-w-7xl mx-auto py-6 space-y-8 bg-gray-50 min-h-screen">
+    <div className=" mx-auto py-6 space-y-8 bg-gray-50 min-h-screen">
 
       {/* HEADER */}
       <div className="flex flex-col md:flex-row md:items-center justify-between gap-4">
         <div>
-          <h1 className="text-3xl font-extrabold text-corporate-navy tracking-tight">Manage Careers</h1>
-          <p className="text-gray-500 mt-2 max-w-2xl">Create, update and monitor job positions using a clean admin layout consistent with blogs and news.</p>
+          <h1 className="text-2xl font-bold text-corporate-navy tracking-tight">Manage Careers</h1>
+          <p className="text-gray-500 mt-2 ">Create, update and monitor job positions using a clean admin layout consistent with blogs and news.</p>
         </div>
 
         <button
@@ -166,7 +166,7 @@ const AdminJobsPage = () => {
       {showForm && (
         <div className="fixed inset-0 bg-black/60 flex items-center justify-center z-50 p-4">
 
-          <div className="bg-white w-full max-w-3xl rounded-2xl shadow-xl overflow-hidden">
+          <div className="bg-white w-full  rounded-2xl shadow-xl overflow-hidden">
 
             {/* HEADER */}
             <div className="flex justify-between items-center px-6 py-4 border-b bg-gray-50">
@@ -183,7 +183,7 @@ const AdminJobsPage = () => {
             </div>
 
             {/* FORM */}
-            <div className="p-6 max-h-[80vh] overflow-y-auto">
+            <div className="p-6 ] overflow-y-auto">
               <JobForm
                 onSubmit={handleSubmit}
                 selectedJob={selectedJob}

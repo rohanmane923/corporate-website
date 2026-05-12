@@ -39,7 +39,7 @@ const ResumeViewer = ({ application, isOpen, onClose }) => {
 
     return (
         <div className="fixed inset-0 bg-black/50 flex items-center justify-center z-50 p-4">
-            <div className="bg-white w-full max-w-4xl rounded-2xl shadow-2xl overflow-hidden">
+            <div className="bg-white w-full  rounded-2xl shadow-2xl overflow-hidden">
                 {/* Header */}
                 <div className="flex justify-between items-center px-6 py-4 border-b bg-gradient-to-r from-corporate-navy to-corporate-orange">
                     <div>
@@ -55,7 +55,7 @@ const ResumeViewer = ({ application, isOpen, onClose }) => {
                 </div>
 
                 {/* Content */}
-                <div className="p-6 max-h-[70vh] overflow-y-auto">
+                <div className="p-6 ] overflow-y-auto">
                     {application.resume ? (
                         <div className="space-y-4">
                             {/* Applicant Info */}
@@ -254,11 +254,11 @@ const JobApplications = () => {
     }
 
     return (
-        <div className="max-w-7xl mx-auto py-6 space-y-8 animate-in fade-in duration-500">
+        <div className=" mx-auto py-6 space-y-8 animate-in fade-in duration-500">
             {/* HEADER */}
             <div className="flex flex-col gap-2">
                 <div>
-                    <h1 className="text-3xl font-extrabold text-corporate-navy">Job Applications</h1>
+                    <h1 className="text-2xl font-bold text-corporate-navy tracking-tight">Job Applications</h1>
                     <p className="text-gray-500 text-sm mt-2">Review and manage all job applications submitted by candidates in a consistent admin layout.</p>
                 </div>
             </div>
@@ -523,3 +523,4 @@ const JobApplications = () => {
 };
 
 export default JobApplications;
+

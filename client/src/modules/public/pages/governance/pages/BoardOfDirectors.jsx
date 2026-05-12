@@ -19,7 +19,7 @@ const BoardOfDirectors = () => {
 />
 
       {/* 🔥 STORYTELLING SECTION */}
-      <section className="max-w-7xl mx-auto px-6 sm:px-10 lg:px-16 py-28 space-y-28">
+      <section className="w-full mx-auto max-w-screen-2xl px-8 sm:px-12 lg:px-20 py-28 space-y-28">
 
         {boardMembers.map((member, index) => {
           const isEven = index % 2 === 0;

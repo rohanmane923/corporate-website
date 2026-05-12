@@ -220,7 +220,7 @@ const ManageNews = () => {
       {/* HEADER */}
       <div className="flex justify-between items-center">
         <div>
-          <h1 className="text-2xl font-bold">
+          <h1 className="text-2xl font-bold text-corporate-navy tracking-tight">
             Manage News
           </h1>
           <p className="text-gray-500">

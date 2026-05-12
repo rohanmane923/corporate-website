@@ -68,13 +68,13 @@ const Compliance = () => {
       />
 
       {/* 🔥 OVERVIEW */}
-      <section className="max-w-7xl mx-auto px-6 sm:px-10 lg:px-16 py-20">
+      <section className="w-full mx-auto max-w-screen-2xl px-8 sm:px-12 lg:px-20 py-20">
 
         <motion.div
           initial={{ opacity: 0, y: 40 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6 }}
-          className="max-w-3xl"
+          className=""
         >
           <h2 className="text-3xl font-semibold text-orange-500 mb-4">
             Our Approach to Compliance
@@ -91,7 +91,7 @@ const Compliance = () => {
       </section>
 
       {/* 🔥 CARDS */}
-      <section className="max-w-7xl mx-auto px-6 sm:px-10 lg:px-16 pb-24">
+      <section className="w-full mx-auto max-w-screen-2xl px-8 sm:px-12 lg:px-20 pb-24">
 
         <div className="grid sm:grid-cols-2 gap-10">
 
@@ -143,7 +143,7 @@ const Compliance = () => {
 
       {/* 🔥 TRUST BLOCK */}
       <section className="bg-white py-20">
-        <div className="max-w-4xl mx-auto text-center px-6">
+        <div className=" mx-auto text-center px-6">
 
           <motion.h2
             initial={{ opacity: 0, y: 30 }}

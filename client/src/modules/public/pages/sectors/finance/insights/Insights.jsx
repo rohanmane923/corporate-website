@@ -132,7 +132,7 @@ const Insights = () => {
       {/* Back Navigation */}
       <motion.div
         variants={itemVariants}
-        className="max-w-7xl mx-auto px-8 sm:px-12 lg:px-20 py-8"
+        className=" mx-auto px-8 sm:px-12 lg:px-20 py-8"
       >
         <button
           onClick={() => navigate('/sectors/finance')}
@@ -146,11 +146,11 @@ const Insights = () => {
       {/* Insights Grid */}
       <motion.section
         variants={itemVariants}
-        className="max-w-7xl mx-auto px-8 sm:px-12 lg:px-20 py-16"
+        className=" mx-auto px-8 sm:px-12 lg:px-20 py-16"
       >
         <div className="text-center mb-12">
           <h2 className="text-3xl font-bold text-gray-900 mb-4">Insights & Research</h2>
-          <p className="text-lg text-gray-600 max-w-2xl mx-auto mb-8">
+          <p className="text-lg text-gray-600  mx-auto mb-8">
             Explore our comprehensive collection of financial insights and market research to inform your business strategy.
           </p>
 
@@ -224,9 +224,9 @@ const Insights = () => {
         variants={itemVariants}
         className="bg-gray-900 text-white py-16"
       >
-        <div className="max-w-7xl mx-auto px-8 sm:px-12 lg:px-20 text-center">
+        <div className=" mx-auto px-8 sm:px-12 lg:px-20 text-center">
           <h2 className="text-3xl font-bold mb-4">Ready to Optimize Your Finances?</h2>
-          <p className="text-xl text-gray-300 mb-8 max-w-2xl mx-auto">
+          <p className="text-xl text-gray-300 mb-8  mx-auto">
             Let's discuss how our financial expertise can drive growth and create value for your organization.
           </p>
           <button

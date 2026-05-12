@@ -265,7 +265,7 @@ const InsightDetail = () => {
       {/* Back Navigation */}
       <motion.div
         variants={itemVariants}
-        className="max-w-7xl mx-auto px-8 sm:px-12 lg:px-20 py-8"
+        className=" mx-auto px-8 sm:px-12 lg:px-20 py-8"
       >
         <button
           onClick={() => navigate('/sectors/finance/insights')}
@@ -279,9 +279,9 @@ const InsightDetail = () => {
       {/* Overview Section */}
       <motion.section
         variants={itemVariants}
-        className="max-w-7xl mx-auto px-8 sm:px-12 lg:px-20 py-16"
+        className=" mx-auto px-8 sm:px-12 lg:px-20 py-16"
       >
-        <div className="max-w-4xl">
+        <div className="">
           <h2 className="text-3xl font-bold text-gray-900 mb-6">Overview</h2>
           <p className="text-lg text-gray-600 leading-relaxed mb-8">
             {insight.overview}
@@ -291,7 +291,7 @@ const InsightDetail = () => {
 
       {/* Challenge & Solution */}
       <section className="bg-gray-50 py-16">
-        <div className="max-w-7xl mx-auto px-8 sm:px-12 lg:px-20">
+        <div className=" mx-auto px-8 sm:px-12 lg:px-20">
           <div className="grid gap-12 lg:grid-cols-2">
             <motion.div
               variants={itemVariants}
@@ -327,11 +327,11 @@ const InsightDetail = () => {
       {/* Results */}
       <motion.section
         variants={itemVariants}
-        className="max-w-7xl mx-auto px-8 sm:px-12 lg:px-20 py-16"
+        className=" mx-auto px-8 sm:px-12 lg:px-20 py-16"
       >
         <div className="text-center mb-12">
           <h2 className="text-3xl font-bold text-gray-900 mb-4">Key Results</h2>
-          <p className="text-lg text-gray-600 max-w-2xl mx-auto">
+          <p className="text-lg text-gray-600  mx-auto">
             Measurable outcomes achieved through our strategic approach
           </p>
         </div>
@@ -359,13 +359,13 @@ const InsightDetail = () => {
 
       {/* Key Features */}
       <section className="bg-gray-50 py-16">
-        <div className="max-w-7xl mx-auto px-8 sm:px-12 lg:px-20">
+        <div className=" mx-auto px-8 sm:px-12 lg:px-20">
           <motion.div
             variants={itemVariants}
             className="text-center mb-12"
           >
             <h2 className="text-3xl font-bold text-gray-900 mb-4">Key Features</h2>
-            <p className="text-lg text-gray-600 max-w-2xl mx-auto">
+            <p className="text-lg text-gray-600  mx-auto">
               Comprehensive solutions tailored to your financial goals
             </p>
           </motion.div>
@@ -388,10 +388,10 @@ const InsightDetail = () => {
       {/* Testimonial */}
       <motion.section
         variants={itemVariants}
-        className="max-w-7xl mx-auto px-8 sm:px-12 lg:px-20 py-16"
+        className=" mx-auto px-8 sm:px-12 lg:px-20 py-16"
       >
         <div className="bg-gradient-to-r from-blue-50 to-orange-50 rounded-3xl p-8 md:p-12">
-          <div className="max-w-4xl mx-auto text-center">
+          <div className=" mx-auto text-center">
             <blockquote className="text-xl md:text-2xl font-medium text-gray-900 mb-8 leading-relaxed">
               "{insight.testimonial.quote}"
             </blockquote>
@@ -406,7 +406,7 @@ const InsightDetail = () => {
       {/* Gallery */}
       <motion.section
         variants={itemVariants}
-        className="max-w-7xl mx-auto px-8 sm:px-12 lg:px-20 py-16"
+        className=" mx-auto px-8 sm:px-12 lg:px-20 py-16"
       >
         <div className="text-center mb-12">
           <h2 className="text-3xl font-bold text-gray-900 mb-4">Resource Gallery</h2>
@@ -438,9 +438,9 @@ const InsightDetail = () => {
         variants={itemVariants}
         className="bg-gray-900 text-white py-16"
       >
-        <div className="max-w-7xl mx-auto px-8 sm:px-12 lg:px-20 text-center">
+        <div className=" mx-auto px-8 sm:px-12 lg:px-20 text-center">
           <h2 className="text-3xl font-bold mb-4">Ready to Strengthen Your Finances?</h2>
-          <p className="text-xl text-gray-300 mb-8 max-w-2xl mx-auto">
+          <p className="text-xl text-gray-300 mb-8  mx-auto">
             Discover how our financial expertise can help your organization achieve its goals and maximize value.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">

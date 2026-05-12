@@ -1,77 +1,105 @@
-import { Bell, Search } from "lucide-react";
+import { Bell, ChevronDown, User } from "lucide-react";
 import { useNavigate } from "react-router-dom";
 import { useSelector } from "react-redux";
-import { useState } from "react";
+import { useState, useEffect } from "react";
+import logo from "../../../assets/logo.png";
 
 export default function AdminNavbar() {
   const navigate = useNavigate();
-  const [search, setSearch] = useState("");
 
-  const { enquiries } = useSelector((state) => state.adminEnquiry);
+  const [openProfile, setOpenProfile] = useState(false);
+  const [openNotif, setOpenNotif] = useState(false);
 
-  const unreadCount = enquiries.filter(
-    (e) => e.status === "unread"
-  ).length;
+  const [profile, setProfile] = useState({});
+
+  // ✅ load profile image
+  useEffect(() => {
+    const saved = localStorage.getItem("adminProfile");
+    if (saved) {
+      setProfile(JSON.parse(saved));
+    }
+  }, []);
+
+  const enquiries =
+    useSelector((state) => state.adminEnquiry?.enquiries) || [];
+
+  const applications =
+    useSelector((state) => state.adminJob?.applications) || [];
+
+  const unreadEnquiries = enquiries.filter((e) => e.status === "unread");
+  const newApplications = applications.filter((a) => a.status === "new");
+
+  const unreadCount = unreadEnquiries.length + newApplications.length;
 
   const handleLogout = () => {
-    localStorage.removeItem("token");
-    localStorage.removeItem("user");
+    localStorage.clear();
     navigate("/admin/login");
   };
 
   return (
-    <header className="bg-white border-b px-6 py-3 flex items-center justify-between">
+    <header className="w-full bg-white border-b h-16 flex items-center justify-between px-6 fixed top-0 left-0 z-50">
 
-      {/* Left */}
-      <h1 className="text-lg font-semibold text-gray-800">
-        Admin Panel
-      </h1>
+      <img src={logo} alt="logo" className="h-10 object-contain" />
 
-      {/* Right */}
       <div className="flex items-center gap-6">
 
-        {/* Search */}
-        <div className="hidden md:flex items-center bg-gray-100 px-3 py-1 rounded-md">
-          <Search size={18} className="text-gray-500" />
-          <input
-            type="text"
-            placeholder="Search enquiries..."
-            value={search}
-            onChange={(e) => setSearch(e.target.value)}
-            className="bg-transparent outline-none px-2 text-sm"
-          />
+        {/* 🔔 Notifications */}
+        <div className="relative">
+          <div
+            onClick={() => setOpenNotif(!openNotif)}
+            className="cursor-pointer relative"
+          >
+            <Bell size={20} />
+
+            {unreadCount > 0 && (
+              <span className="absolute -top-1 -right-2 bg-red-500 text-white text-xs px-1.5 rounded-full">
+                {unreadCount}
+              </span>
+            )}
+          </div>
         </div>
 
-        {/* Notification */}
-        <button className="relative text-gray-600 hover:text-gray-900">
-          <Bell size={20} />
-          {unreadCount > 0 && (
-            <span className="absolute -top-1 -right-1 bg-red-500 text-white text-xs rounded-full px-1">
-              {unreadCount}
-            </span>
+        {/* 👤 PROFILE */}
+        <div className="relative">
+          <div
+            onClick={() => setOpenProfile(!openProfile)}
+            className="flex items-center gap-2 cursor-pointer"
+          >
+            {/* ✅ PROFILE IMAGE */}
+            <div className="w-8 h-8 rounded-full overflow-hidden bg-gray-200">
+              {profile.image ? (
+                <img
+                  src={profile.image}
+                  className="w-full h-full object-cover"
+                />
+              ) : (
+                <div className="flex items-center justify-center h-full">
+                  <User size={16} />
+                </div>
+              )}
+            </div>
+
+            <ChevronDown size={16} />
+          </div>
+
+          {openProfile && (
+            <div className="absolute right-0 mt-2 w-40 bg-white shadow-md rounded-md border">
+              <button
+                onClick={() => navigate("/admin/profile")}
+                className="block w-full text-left px-4 py-2 hover:bg-gray-100 text-sm"
+              >
+                Profile
+              </button>
+
+              <button
+                onClick={handleLogout}
+                className="block w-full text-left px-4 py-2 hover:bg-gray-100 text-sm text-red-500"
+              >
+                Logout
+              </button>
+            </div>
           )}
-        </button>
-
-        {/* Profile */}
-        <div className="flex items-center gap-3">
-          <img
-            src="/admin-avatar.png"
-            alt="Admin"
-            className="w-8 h-8 rounded-full"
-          />
-          <span className="text-sm font-medium text-gray-700">
-            Admin
-          </span>
         </div>
-
-        {/* Logout */}
-        <button
-          onClick={handleLogout}
-          className="bg-orange-500 hover:bg-orange-600 text-white px-4 py-1 rounded-md text-sm"
-        >
-          Logout
-        </button>
-
       </div>
     </header>
   );

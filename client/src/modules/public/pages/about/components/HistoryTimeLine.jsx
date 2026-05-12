@@ -10,7 +10,7 @@ const timeline = [
 const HistoryTimeline = () => {
   return (
     <div className="bg-gray-50 py-20">
-      <div className="max-w-6xl mx-auto px-6">
+      <div className="w-full mx-auto px-8 sm:px-12 lg:px-20">
 
         {/* Heading */}
         <motion.h2

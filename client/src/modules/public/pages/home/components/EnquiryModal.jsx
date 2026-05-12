@@ -5,7 +5,7 @@ const EnquiryModal = ({ isOpen, onClose }) => {
 
   return (
     <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/50 backdrop-blur-md">
-      <div className="bg-white rounded-2xl p-8 w-full max-w-lg relative shadow-2xl">
+      <div className="bg-white rounded-2xl p-8 w-full  relative shadow-2xl">
 
         <button onClick={onClose} className="absolute top-4 right-4">✕</button>
 
