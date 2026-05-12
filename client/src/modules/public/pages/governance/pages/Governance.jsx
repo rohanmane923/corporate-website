@@ -6,7 +6,7 @@ import ESGCard from "../components/ESGCard";
 import PolicyItem from "../components/PolicyItem";
 import ComplianceCard from "../components/ComplianceCard";
 import HeroSection from "../../../components/HeroSection";
-import governanceImg from "../../../../../assets/governance image.png";
+import governanceImg from "../../../../../assets/Governance image.png";
 
 const Governance = () => {
   const navigate = useNavigate();
